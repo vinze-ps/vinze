@@ -1,8 +1,10 @@
+"use client";
+import "vinze-react-admin/style.css";
 import NoSSR from "@/components/NoSSR/NoSSR";
 import React, { useMemo, useState } from "react";
 import useLocalStorage from "use-local-storage";
 import VinzeReactAdmin from "vinze-react-admin";
-import { IVRAAuth, IVRAModule, IVRAPost, IVRAUserData } from "vinze-react-admin";
+import { IVRAAuth, IVRAModule, IVRAPost, IVRAUserData } from "vinze-react-admin/src/lib/types/VinzeAdminPanel.types";
 
 const Admin = () => {
   const [userData, setUserData] = useLocalStorage<IVRAUserData | null>("vra-user-data", null);
