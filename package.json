@@ -21,8 +21,7 @@
     "sass": "^1.69.7",
     "tailwind-merge": "^2.2.0",
     "tailwindcss-animate": "^1.0.7",
-    "use-local-storage": "^3.0.0",
-    "vinze-react-admin": "^2024.1.8"
+    "use-local-storage": "^3.0.0"
   },
   "devDependencies": {
     "@types/node": "^20",
