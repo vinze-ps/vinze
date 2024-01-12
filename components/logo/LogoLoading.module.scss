@@ -1,0 +1,48 @@
+.logo {
+  path {
+    stroke-dasharray: 300;
+    stroke-dashoffset: 300;
+    animation: draw 1.6s forwards 1.6s;
+    fill: rgba(255, 255, 255, 0);
+
+    &:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    &:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: 0.8s;
+    }
+
+    &:nth-child(4) {
+      animation-delay: 1.2s;
+    }
+
+    &:nth-child(5) {
+      animation-delay: 1.6s;
+    }
+
+    &:nth-child(6),
+    &:nth-child(7),
+    &:nth-child(8),
+    &:nth-child(9),
+    &:nth-child(10) {
+      animation: fill 0.2s both 2.6s;
+    }
+  }
+
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes fill {
+    to {
+      fill: rgba(255, 255, 255, 1);
+    }
+  }
+}
