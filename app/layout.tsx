@@ -14,7 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pl" data-theme="DARK" className={`dark ${GeistSans.variable} ${GeistMono.variable}`}>
       <body>
-        {/* <Navbar /> */}
+        <Navbar />
         <Providers>{children}</Providers>
       </body>
     </html>
