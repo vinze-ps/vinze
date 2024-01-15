@@ -14,8 +14,12 @@ import {
   DropdownItem,
 } from "@nextui-org/react";
 import { ChevronDown } from "lucide-react";
+import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
+  const pathname = usePathname();
+
   return (
     <NavbarNEXT
       className="border-b-1"
@@ -27,8 +31,8 @@ const Navbar = () => {
         <p className="font-bold text-inherit">VINZE</p>
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        <NavbarItem isActive>
-          <Link className="text-small" aria-current="page" color="foreground" href="#">
+        <NavbarItem>
+          <Link className="text-small" aria-current="page" color="foreground" href="/">
             Home
           </Link>
         </NavbarItem>
@@ -37,8 +41,8 @@ const Navbar = () => {
             Posts
           </Link>
         </NavbarItem>
-        <NavbarItem>
-          <Link isDisabled className="text-small" aria-current="page" color="foreground" href="#">
+        <NavbarItem isActive>
+          <Link className="text-small" aria-current="page" color="foreground" href="components">
             Components
           </Link>
         </NavbarItem>
@@ -72,16 +76,7 @@ const Navbar = () => {
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem>
-          <Button
-            isDisabled
-            size="sm"
-            radius="sm"
-            disableAnimation
-            as={Link}
-            color="default"
-            href="admin"
-            variant="bordered"
-          >
+          <Button size="sm" radius="sm" disableAnimation as={Link} color="default" href="admin" variant="bordered">
             Login
           </Button>
         </NavbarItem>
