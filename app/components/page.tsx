@@ -1,5 +1,5 @@
 import React from "react";
-import Combobox from "./test_components/Combobox/Combobox";
+import Combobox from "./test_components/combobox/Combobox";
 
 const Components = () => {
   return (
