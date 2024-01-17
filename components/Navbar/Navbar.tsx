@@ -31,23 +31,23 @@ const Navbar = () => {
         <p className="font-bold text-inherit">VINZE</p>
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        <NavbarItem>
+        <NavbarItem isActive={pathname.length === 1}>
           <Link className="text-small" aria-current="page" color="foreground" href="/">
             Home
           </Link>
         </NavbarItem>
-        <NavbarItem>
+        <NavbarItem isActive={pathname.startsWith("/posts")}>
           <Link isDisabled className="text-small" aria-current="page" color="foreground" href="#">
             Posts
           </Link>
         </NavbarItem>
-        <NavbarItem isActive>
+        <NavbarItem isActive={pathname.startsWith("/components")}>
           <Link className="text-small" aria-current="page" color="foreground" href="components">
             Components
           </Link>
         </NavbarItem>
         <Dropdown>
-          <NavbarItem>
+          <NavbarItem isActive={pathname.startsWith("/projects")}>
             <DropdownTrigger>
               <Button
                 isDisabled
