@@ -4,8 +4,8 @@ import MainHero from "@/lib/assets/img/main-hero.png";
 
 export default function Home() {
   return (
-    <main>
-      <div className="flex gap-8">
+    <main className="w-full px-4 py-8">
+      <div className="max-w-[1024px] mx-auto flex gap-8">
         <div className="w-full">
           <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-7xl mb-4">Hello.</h1>
           <p className="text-md text-muted-foreground">

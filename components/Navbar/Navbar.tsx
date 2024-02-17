@@ -39,7 +39,9 @@ const Navbar = () => {
       }}
     >
       <NavbarBrand>
-        <p className="font-bold text-inherit">VINZE</p>
+        <Link href="/">
+          <p className="font-bold text-inherit">VINZE</p>
+        </Link>
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavigationMenu delayDuration={0}>
