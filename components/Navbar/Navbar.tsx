@@ -37,20 +37,14 @@ const Navbar = () => {
           </Link>
         </NavbarItem>
         <NavbarItem isActive={pathname.startsWith("/posts")}>
-          <Link isDisabled className="text-small" aria-current="page" color="foreground" href="#">
+          <Link className="text-small" aria-current="page" color="foreground" href="#">
             Posts
-          </Link>
-        </NavbarItem>
-        <NavbarItem isActive={pathname.startsWith("/components")}>
-          <Link className="text-small" aria-current="page" color="foreground" href="components">
-            Components
           </Link>
         </NavbarItem>
         <Dropdown>
           <NavbarItem isActive={pathname.startsWith("/projects")}>
             <DropdownTrigger>
               <Button
-                isDisabled
                 disableRipple
                 className="p-0 bg-transparent data-[hover=true]:bg-transparent"
                 endContent={<ChevronDown size="1rem" />}
@@ -76,7 +70,7 @@ const Navbar = () => {
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem>
-          <Button size="sm" radius="sm" disableAnimation as={Link} color="default" href="admin" variant="bordered">
+          <Button className="bg-[transparent]" size="sm" radius="sm" disableAnimation as={Link} href="admin">
             Login
           </Button>
         </NavbarItem>
