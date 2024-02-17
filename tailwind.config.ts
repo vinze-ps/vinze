@@ -84,7 +84,27 @@ const config: Config = {
     },
   },
   darkMode: "class",
-  plugins: [tailwindcssanimate, nextui()],
+  plugins: [
+    tailwindcssanimate,
+    nextui({
+      layout: {
+        radius: {
+          small: "4px",
+          medium: "8px",
+          large: "16px",
+        },
+        borderWidth: {
+          small: "1px",
+          medium: "1px",
+          large: "2px",
+        },
+      },
+      themes: {
+        light: {},
+        dark: {},
+      },
+    }),
+  ],
 };
 
 export default config;
