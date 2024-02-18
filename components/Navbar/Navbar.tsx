@@ -26,6 +26,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
 import { ListItem } from "./ListItem/ListItem";
+import { cn } from "@/lib/utils";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -48,11 +49,13 @@ const Navbar = () => {
           <NavigationMenuList>
             <NavigationMenuItem>
               <Link href="/" legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>Home</NavigationMenuLink>
+                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-[transparent]")}>
+                  Home
+                </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Projects</NavigationMenuTrigger>
+              <NavigationMenuTrigger className="bg-[transparent]">Projects</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                   <li className="row-span-3">
@@ -81,7 +84,7 @@ const Navbar = () => {
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Posts</NavigationMenuTrigger>
+              <NavigationMenuTrigger className="bg-[transparent]">Posts</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                   <li className="row-span-3">

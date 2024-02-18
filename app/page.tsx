@@ -1,10 +1,11 @@
-import Link from "next/link";
+"use client";
 import Image from "next/image";
 import MainHero from "@/lib/assets/img/main-hero.png";
+import Inner from "@/components/page-transitions/Inner";
 
 export default function Home() {
   return (
-    <main className="w-full px-4 py-8">
+    <Inner>
       <div className="max-w-[1024px] mx-auto flex gap-8">
         <div className="w-full">
           <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-7xl mb-4">Hello.</h1>
@@ -25,6 +26,6 @@ export default function Home() {
         </div>
         <Image src={MainHero} alt="Main Hero" width={280} height={258} />
       </div>
-    </main>
+    </Inner>
   );
 }
