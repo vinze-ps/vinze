@@ -8,14 +8,18 @@ const PageAnimatePresence = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname();
 
   return (
-    <AnimatePresence>
+    <AnimatePresence mode="wait">
       <motion.div key={pathname} className="w-full h-full">
         <motion.div
-          initial={{ height: "100vh" }}
-          animate={{ height: "0vh" }}
-          exit={{ height: "0vh" }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="fixed top-0 left-0 bg-[red] w-[100vw] h-[100vh] z-[30]"
+          animate={{
+            top: "0vh",
+            transitionEnd: {
+              display: "none",
+            },
+            transition: { duration: 1, ease: "easeInOut" },
+          }}
+          exit={{ top: "100vh", transition: { duration: 0 } }}
+          className="fixed top-[100vh] left-0 bg-background w-[100vw] h-[100vh] z-[50]"
         ></motion.div>
         <Navbar />
         <div className="w-full mx-auto min-h-[calc(100vh-4rem)]">

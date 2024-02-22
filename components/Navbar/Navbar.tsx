@@ -1,17 +1,7 @@
 "use client";
 
 import React from "react";
-import {
-  Navbar as NavbarNEXT,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-  Button,
-  Dropdown,
-  DropdownTrigger,
-  DropdownMenu,
-  DropdownItem,
-} from "@nextui-org/react";
+import { Navbar as NavbarNEXT, NavbarBrand, NavbarContent, NavbarItem, Button, Dropdown, DropdownTrigger, DropdownMenu, DropdownItem } from "@nextui-org/react";
 import { ChevronDown } from "lucide-react";
 import { useRouter } from "next/router";
 import { usePathname } from "next/navigation";
@@ -49,9 +39,7 @@ const Navbar = () => {
           <NavigationMenuList>
             <NavigationMenuItem>
               <Link href="/" legacyBehavior passHref>
-                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-[transparent]")}>
-                  Home
-                </NavigationMenuLink>
+                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-[transparent]")}>Home</NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
@@ -60,15 +48,13 @@ const Navbar = () => {
                 <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                   <li className="row-span-3">
                     <NavigationMenuLink asChild>
-                      <a
+                      <Link
                         className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                         href="/projects"
                       >
                         <div className="mb-2 mt-4 text-lg font-medium">All projects</div>
-                        <p className="text-sm leading-tight text-muted-foreground">
-                          All projects that I have done so far.
-                        </p>
-                      </a>
+                        <p className="text-sm leading-tight text-muted-foreground">All projects that I have done so far.</p>
+                      </Link>
                     </NavigationMenuLink>
                   </li>
                   <ListItem href="/projects/kapla" title="P88-KaPla">
@@ -89,13 +75,13 @@ const Navbar = () => {
                 <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                   <li className="row-span-3">
                     <NavigationMenuLink asChild>
-                      <a
+                      <Link
                         className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                         href="/projects"
                       >
                         <div className="mb-2 mt-4 text-lg font-medium">...</div>
                         <p className="text-sm leading-tight text-muted-foreground">...</p>
-                      </a>
+                      </Link>
                     </NavigationMenuLink>
                   </li>
                   <ListItem href="/" title="...">
