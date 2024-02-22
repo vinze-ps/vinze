@@ -12,14 +12,11 @@ const PageAnimatePresence = ({ children }: { children: React.ReactNode }) => {
       <motion.div key={pathname} className="w-full h-full">
         <motion.div
           animate={{
-            top: "0vh",
-            transitionEnd: {
-              display: "none",
-            },
+            top: "30vh",
             transition: { duration: 1, ease: "easeInOut" },
           }}
           exit={{ top: "100vh", transition: { duration: 0 } }}
-          className="fixed top-[100vh] left-0 bg-background w-[100vw] h-[100vh] z-[50]"
+          className="fixed top-[100vh] left-0 bg-[red] w-[100vw] h-[100vh] z-[50]"
         ></motion.div>
         <Navbar />
         <div className="w-full mx-auto min-h-[calc(100vh-4rem)]">
