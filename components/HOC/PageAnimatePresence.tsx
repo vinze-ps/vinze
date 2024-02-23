@@ -8,7 +8,7 @@ const PageAnimatePresence = ({ children }: any) => {
   const pathname = usePathname();
 
   return (
-    <AnimatePresence initial={false} mode="wait">
+    <AnimatePresence mode="wait">
       <motion.div key={pathname}>
         <FrozenRoute>{children}</FrozenRoute>
       </motion.div>
