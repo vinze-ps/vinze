@@ -1,7 +1,17 @@
 "use client";
 
 import React from "react";
-import { Navbar as NavbarNEXT, NavbarBrand, NavbarContent, NavbarItem, Button, Dropdown, DropdownTrigger, DropdownMenu, DropdownItem } from "@nextui-org/react";
+import {
+  Navbar as NavbarNEXT,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  Button,
+  Dropdown,
+  DropdownTrigger,
+  DropdownMenu,
+  DropdownItem,
+} from "@nextui-org/react";
 import { ChevronDown } from "lucide-react";
 import { useRouter } from "next/router";
 import { usePathname } from "next/navigation";
@@ -23,7 +33,7 @@ const Navbar = () => {
 
   return (
     <NavbarNEXT
-      className="border-b-1"
+      className="border-b-1 fixed top-0 left-0"
       classNames={{
         item: ["font-sm", "flex", "relative", "h-full", "items-center", "data-[active=true]:after:bg-primary"],
         wrapper: "px-4",
@@ -39,7 +49,9 @@ const Navbar = () => {
           <NavigationMenuList>
             <NavigationMenuItem>
               <Link href="/" legacyBehavior passHref>
-                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-[transparent]")}>Home</NavigationMenuLink>
+                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-[transparent]")}>
+                  Home
+                </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
@@ -53,7 +65,9 @@ const Navbar = () => {
                         href="/projects"
                       >
                         <div className="mb-2 mt-4 text-lg font-medium">All projects</div>
-                        <p className="text-sm leading-tight text-muted-foreground">All projects that I have done so far.</p>
+                        <p className="text-sm leading-tight text-muted-foreground">
+                          All projects that I have done so far.
+                        </p>
                       </Link>
                     </NavigationMenuLink>
                   </li>
