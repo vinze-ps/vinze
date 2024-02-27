@@ -11,8 +11,11 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const theme = "LIGHT";
+  // const theme = "DARK";
+
   return (
-    <html lang="pl" data-theme="DARK" className={`dark ${GeistSans.variable} ${GeistMono.variable}`}>
+    <html lang="pl" data-theme={theme} className={`${theme.toLowerCase()} ${GeistSans.variable} ${GeistMono.variable}`}>
       <body>
         <Providers>
           <PageAnimatePresence>{children}</PageAnimatePresence>

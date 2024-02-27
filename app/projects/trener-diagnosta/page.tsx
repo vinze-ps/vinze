@@ -35,7 +35,7 @@ const TrenerDiagnosta = () => {
           engagement tool, streamlining the process of scheduling and management for personal training services.
         </motion.p>
       </div>
-      <div className="mt-8 w-full bg-default-50 py-8 overflow-hidden h-[800px]">
+      <div className="mt-8 w-full bg-[rgb(210,237,237)] py-8 overflow-hidden h-[800px]">
         <motion.div style={{ y }} className="mx-auto w-max flex flex-col gap-8">
           <div className="flex justify-center gap-8">{getImage(TD1, "Trener Diagnosta 1")}</div>
           <div className="flex justify-center gap-8">

@@ -1,7 +1,17 @@
 "use client";
 
 import React from "react";
-import { Navbar as NavbarNEXT, NavbarBrand, NavbarContent, NavbarItem, Button, Dropdown, DropdownTrigger, DropdownMenu, DropdownItem } from "@nextui-org/react";
+import {
+  Navbar as NavbarNEXT,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  Button,
+  Dropdown,
+  DropdownTrigger,
+  DropdownMenu,
+  DropdownItem,
+} from "@nextui-org/react";
 import { ChevronDown } from "lucide-react";
 import { useRouter } from "next/router";
 import { usePathname } from "next/navigation";
@@ -30,7 +40,7 @@ const Navbar = () => {
       }}
     >
       <NavbarBrand>
-        <Link href="/">
+        <Link scroll={false} href="/">
           <p className="font-bold text-inherit">VINZE</p>
         </Link>
       </NavbarBrand>
@@ -38,8 +48,10 @@ const Navbar = () => {
         <NavigationMenu delayDuration={0}>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <Link href="/" legacyBehavior passHref>
-                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-[transparent]")}>Home</NavigationMenuLink>
+              <Link scroll={false} href="/" legacyBehavior passHref>
+                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-[transparent]")}>
+                  Home
+                </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
@@ -49,11 +61,14 @@ const Navbar = () => {
                   <li className="row-span-3">
                     <NavigationMenuLink asChild>
                       <Link
+                        scroll={false}
                         className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                         href="/projects"
                       >
                         <div className="mb-2 mt-4 text-lg font-medium">All projects</div>
-                        <p className="text-sm leading-tight text-muted-foreground">All projects that I have done so far.</p>
+                        <p className="text-sm leading-tight text-muted-foreground">
+                          All projects that I have done so far.
+                        </p>
                       </Link>
                     </NavigationMenuLink>
                   </li>
@@ -76,6 +91,7 @@ const Navbar = () => {
                   <li className="row-span-3">
                     <NavigationMenuLink asChild>
                       <Link
+                        scroll={false}
                         className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                         href="/blog"
                       >
@@ -99,12 +115,12 @@ const Navbar = () => {
           </NavigationMenuList>
         </NavigationMenu>
         {/* <NavbarItem isActive={pathname.length === 1}>
-          <Link className="text-small" aria-current="page" color="foreground" href="/">
+          <Link scroll={false} className="text-small" aria-current="page" color="foreground" href="/">
             Home
           </Link>
         </NavbarItem>
         <NavbarItem isActive={pathname.startsWith("/posts")}>
-          <Link className="text-small" aria-current="page" color="foreground" href="#">
+          <Link scroll={false} className="text-small" aria-current="page" color="foreground" href="#">
             Posts
           </Link>
         </NavbarItem>

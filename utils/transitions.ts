@@ -1,8 +1,14 @@
 import { Variants } from "framer-motion";
 
 export const variantsSlide: Variants = {
-  exit: { opacity: 1, x: 0, y: "0vh", transitionEnd: { opacity: 0, transitionDuration: "0" } },
-  enter: { x: 0, y: "100vh", transitionEnd: { opacity: 1, transitionDuration: "0" } },
+  exit: {
+    opacity: 1,
+    x: 0,
+    y: "0vh",
+    transitionDuration: "0s",
+    transitionEnd: { opacity: 0, transitionDuration: "1s" },
+  },
+  enter: { x: 0, y: "100vh", transitionDuration: "0s", transitionEnd: { opacity: 1, transitionDuration: "0s" } },
 };
 
 export const variantsOpacity: Variants = {

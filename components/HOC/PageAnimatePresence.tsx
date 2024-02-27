@@ -8,7 +8,12 @@ const PageAnimatePresence = ({ children }: any) => {
   const pathname = usePathname();
 
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence
+      mode="wait"
+      onExitComplete={() => {
+        window.scrollTo(0, 0);
+      }}
+    >
       <motion.div key={pathname}>
         <FrozenRoute>{children}</FrozenRoute>
       </motion.div>
