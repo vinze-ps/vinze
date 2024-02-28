@@ -1,7 +1,7 @@
 import { useAnimation, useInView } from "framer-motion";
 import { useEffect } from "react";
 
-const useAnimations = ({ ref }: { ref: any }) => {
+const useSectionAnimations = ({ ref }: { ref: any }) => {
   const controls = useAnimation();
   const inView = useInView(ref, {
     margin: "30px",
@@ -19,4 +19,4 @@ const useAnimations = ({ ref }: { ref: any }) => {
   return { controls };
 };
 
-export default useAnimations;
+export default useSectionAnimations;
