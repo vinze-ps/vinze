@@ -75,7 +75,8 @@ export default function Home() {
               Hello.
             </motion.h1>
             <motion.p variants={childVariants} className="text-md text-muted-foreground">
-              My name is Patryk, and I&apos;ve been a programmer since 2018. In 2021, I embarked on a professional journey as a programmer with{" "}
+              My name is Patryk, and I&apos;ve been a programmer since 2018. In 2021, I embarked on a professional
+              journey as a programmer with{" "}
               <a href="https://www.p88.pl" target="_blank" className="text-[hsl(var(--light-blue))]">
                 {" "}
                 Personal&apos;88
@@ -85,11 +86,12 @@ export default function Home() {
                 {" "}
                 Softwarelogic
               </a>
-              . Primarily, I am a full-stack developer with a stronger inclination towards frontend development. Additionally, I am pursuing a degree in
-              Computer Science at the West Pomeranian University of Technology in Szczecin.
+              . Primarily, I am a full-stack developer with a stronger inclination towards frontend development.
+              Additionally, I am pursuing a degree in Computer Science at the West Pomeranian University of Technology
+              in Szczecin.
             </motion.p>
             <motion.div variants={childVariants} className="mt-16">
-              <Button size="lg" className="rounded-full bg-[hsl(var(--light-blue))] text-[white]">
+              <Button disableRipple size="lg" className="rounded-full bg-[hsl(var(--light-blue))] text-[white]">
                 My work
               </Button>
             </motion.div>

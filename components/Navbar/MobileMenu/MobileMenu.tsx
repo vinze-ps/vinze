@@ -90,7 +90,7 @@ const MobileMenu = ({ isOpen }: { isOpen: boolean }) => {
       initial="closed"
       animate={isOpen ? "opened" : "closed"}
       variants={mobileMenuVariant}
-      className={`z-[39] ${styles["mobile-menu"]}`}
+      className={`z-[39] ${styles["mobile-menu"]} md:hidden`}
     >
       <motion.ul className="h-full flex flex-col items-center justify-center gap-8" variants={ulVariant}>
         {MOBILE_NAV_ITEMS.map((navItem) => (

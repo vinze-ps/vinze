@@ -16,7 +16,7 @@ import { ListItem } from "./ListItem/ListItem";
 import { cn } from "@/lib/utils";
 import TD1 from "@/lib/assets/img/trener-diagnosta/trener-diagnosta-1.png";
 import Image from "next/image";
-import { MenuButton } from "./MenuButton/MenuButton";
+import { MenuButton } from "./MobileMenuButton/MobileMenuButton";
 import MobileMenu from "./MobileMenu/MobileMenu";
 
 const Navbar = () => {

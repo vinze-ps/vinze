@@ -1,25 +1,12 @@
 import React from "react";
-import { motion, Transition } from "framer-motion";
+import { motion } from "framer-motion";
 import { Button } from "@nextui-org/react";
 
 interface Props {
-  className?: string;
   onClick?: (isOpen: boolean) => void;
-  color?: string;
-  strokeWidth?: string | number;
-  transition?: Transition;
-  lineProps?: any;
 }
 
-const MenuButton = ({
-  className = "",
-  onClick = () => undefined,
-  strokeWidth = 3,
-  color = "#000",
-  transition = { type: "spring", stiffness: 260, damping: 20 },
-  lineProps = null,
-  ...props
-}: Props) => {
+const MobileMenuButton = ({ onClick = () => undefined }: Props) => {
   const [isOpen, setOpenIs] = React.useState(false);
 
   const variant = isOpen ? "opened" : "closed";
@@ -75,14 +62,13 @@ const MenuButton = ({
     },
   };
 
-  lineProps = {
-    stroke: color,
-    strokeWidth: strokeWidth as number,
+  const lineProps = {
+    stroke: "#000",
+    strokeWidth: 2,
     vectorEffect: "non-scaling-stroke",
     initial: "closed",
     animate: variant,
-    transition,
-    ...lineProps,
+    transition: { type: "spring", stiffness: 260, damping: 20 },
   };
 
   const width = 32;
@@ -95,7 +81,7 @@ const MenuButton = ({
         setOpenIs(!isOpen);
       }}
       disableRipple
-      className={`${className} flex rounded-none p-0 w-[32px] h-[24px] min-w-[32px] min-h-[24px] bg-[transparent] gap-0 overflow-visible`}
+      className={`flex rounded-none p-0 w-[32px] h-[24px] min-w-[32px] min-h-[24px] bg-[transparent] gap-0 overflow-visible md:hidden`}
     >
       <motion.svg
         viewBox="0 0 32 24"
@@ -103,7 +89,6 @@ const MenuButton = ({
         preserveAspectRatio="none"
         width={width}
         height={height}
-        {...props}
         className={`!max-w-[auto] !max-h-[auto]`}
       >
         <motion.line
@@ -128,4 +113,4 @@ const MenuButton = ({
   );
 };
 
-export { MenuButton };
+export { MobileMenuButton as MenuButton };
