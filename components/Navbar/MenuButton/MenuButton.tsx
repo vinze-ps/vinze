@@ -2,14 +2,6 @@ import React from "react";
 import { motion, Transition } from "framer-motion";
 import { Button } from "@nextui-org/react";
 
-{
-  /* <MenuButton
-  isOpen={isOpen}
-  onClick={() => setOpen(!isOpen)}
-  lineProps={{ strokeLinecap: "round" }}
-/> */
-}
-
 interface Props {
   className?: string;
   onClick?: (isOpen: boolean) => void;
@@ -31,34 +23,58 @@ const MenuButton = ({
   const [isOpen, setOpenIs] = React.useState(false);
 
   const variant = isOpen ? "opened" : "closed";
+
   const top = {
     closed: {
+      x1: "15%",
+      x2: "100%",
+      y1: "4",
+      y2: "4",
       rotate: 0,
       translateY: 0,
     },
     opened: {
-      rotate: 45,
-      translateY: 2,
+      x1: "0%",
+      x2: "100%",
+      y1: "4",
+      y2: "4",
+      rotate: -45,
+      translateY: 8,
     },
   };
+
   const center = {
     closed: {
       opacity: 1,
+      x1: "0",
+      x2: "100%",
+      y1: "12", // środek SVG
+      y2: "12",
     },
     opened: {
       opacity: 0,
     },
   };
+
   const bottom = {
     closed: {
+      x1: "30%",
+      x2: "100%",
+      y1: "20",
+      y2: "20",
       rotate: 0,
       translateY: 0,
     },
     opened: {
-      rotate: -45,
-      translateY: -2,
+      x1: "0%",
+      x2: "100%",
+      y1: "20",
+      y2: "20",
+      rotate: 45,
+      translateY: -8,
     },
   };
+
   lineProps = {
     stroke: color,
     strokeWidth: strokeWidth as number,
@@ -70,21 +86,19 @@ const MenuButton = ({
   };
 
   const width = 32;
-  const height = !isOpen ? 24 : 32;
-  const unitHeight = 4;
-  const unitWidth = (unitHeight * (width as number)) / (height as number);
+  const height = 24;
 
   return (
     <Button
       onClick={() => {
         onClick(!isOpen);
-        setOpenIs((prev) => !prev);
+        setOpenIs(!isOpen);
       }}
       disableRipple
       className={`${className} flex rounded-none p-0 w-[32px] h-[24px] min-w-[32px] min-h-[24px] bg-[transparent] gap-0 overflow-visible`}
     >
       <motion.svg
-        viewBox={`0 0 ${unitWidth} ${unitHeight}`}
+        viewBox="0 0 32 24"
         overflow="visible"
         preserveAspectRatio="none"
         width={width}
@@ -92,9 +106,23 @@ const MenuButton = ({
         {...props}
         className={`!max-w-[auto] !max-h-[auto]`}
       >
-        <motion.line x1="0" x2={unitWidth} y1="0" y2="0" variants={top} {...lineProps} />
-        <motion.line x1="0" x2={unitWidth} y1="2" y2="2" variants={center} {...lineProps} />
-        <motion.line x1="0" x2={unitWidth} y1="4" y2="4" variants={bottom} {...lineProps} />
+        <motion.line
+          variants={top}
+          {...lineProps}
+          style={{
+            originX: "50%",
+            originY: "4px",
+          }}
+        />
+        <motion.line variants={center} {...lineProps} />
+        <motion.line
+          variants={bottom}
+          {...lineProps}
+          style={{
+            originX: "50%",
+            originY: "20px",
+          }}
+        />
       </motion.svg>
     </Button>
   );

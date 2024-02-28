@@ -45,7 +45,7 @@ export const variantsPerspective: Variants = {
     opacity: 0.5,
     transition: {
       duration: 1.2,
-      ease: [0.76, 0, 0.24, 1],
+      ease: [0.74, 0, 0.19, 1.02],
     },
   },
 };
