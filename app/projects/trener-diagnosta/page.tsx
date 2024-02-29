@@ -2,10 +2,10 @@
 import { motion } from "framer-motion";
 import React from "react";
 import Image, { StaticImageData } from "next/image";
-import TD1 from "@/lib/assets/img/trener-diagnosta/trener-diagnosta-1.png";
-import TD2 from "@/lib/assets/img/trener-diagnosta/trener-diagnosta-2.png";
-import TD3 from "@/lib/assets/img/trener-diagnosta/trener-diagnosta-3.png";
-import TD_Login_Laptop from "@/lib/assets/img/trener-diagnosta/trener-diagnosta-login-laptop.png";
+import TD1 from "@/lib/assets/projects/trener-diagnosta/trener-diagnosta-1.png";
+import TD2 from "@/lib/assets/projects/trener-diagnosta/trener-diagnosta-2.png";
+import TD3 from "@/lib/assets/projects/trener-diagnosta/trener-diagnosta-3.png";
+import TD_Login_Laptop from "@/lib/assets/projects/trener-diagnosta/trener-diagnosta-login-laptop.png";
 import { childVariants } from "@/utils/transitions";
 import AnimatedSectionContainer from "@/components/common/AnimatedSectionContainer/AnimatedSectionContainer";
 import ParallaxItem from "@/components/common/ParallaxItem/ParallaxItem";

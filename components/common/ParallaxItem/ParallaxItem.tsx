@@ -6,12 +6,15 @@ interface ParallaxProps extends HTMLMotionProps<"div"> {
   offset?: number;
 }
 
-const ParallaxItem = ({ children, offset = 300, ...props }: ParallaxProps): JSX.Element => {
+const ParallaxItem = ({ children, offset = 100, ...props }: ParallaxProps): JSX.Element => {
   const [elementTop, setElementTop] = useState(0);
   const [clientHeight, setClientHeight] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
 
-  const { scrollY } = useScroll();
+  const { scrollY } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
 
   const initial = elementTop - clientHeight;
   const final = elementTop + offset;

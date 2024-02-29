@@ -14,7 +14,7 @@ import {
 import Link from "next/link";
 import { ListItem } from "./ListItem/ListItem";
 import { cn } from "@/lib/utils";
-import TD1 from "@/lib/assets/img/trener-diagnosta/trener-diagnosta-1.png";
+import TD1 from "@/lib/assets/projects/trener-diagnosta/trener-diagnosta-1.png";
 import Image from "next/image";
 import { MenuButton } from "./MobileMenuButton/MobileMenuButton";
 import MobileMenu from "./MobileMenu/MobileMenu";
@@ -41,9 +41,7 @@ const Navbar = () => {
             <NavigationMenuList>
               <NavigationMenuItem>
                 <Link scroll={false} href="/" legacyBehavior passHref>
-                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-[transparent]")}>
-                    Home
-                  </NavigationMenuLink>
+                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-[transparent]")}>Home</NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
@@ -59,9 +57,7 @@ const Navbar = () => {
                         >
                           <Image className="rounded-lg" src={TD1} alt={"Trener diagnosta"} width={158} height={88} />
                           <div className="mb-2 mt-4 text-lg font-medium">All projects</div>
-                          <p className="text-sm leading-tight text-muted-foreground">
-                            All projects that I have done so far.
-                          </p>
+                          <p className="text-sm leading-tight text-muted-foreground">All projects that I have done so far.</p>
                         </Link>
                       </NavigationMenuLink>
                     </li>
