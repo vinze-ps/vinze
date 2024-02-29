@@ -1,7 +1,7 @@
 "use client";
 import Footer from "@/components/layout/Footer/Footer";
 import Navbar from "@/components/layout/Navbar/Navbar";
-import { variantsOpacity, variantsPerspective, variantsSlide } from "@/utils/transitions";
+import { variantsOpacity, variantsPerspective, variantsSlide } from "@/lib/transitions";
 import { motion } from "framer-motion";
 
 export default function Template({ children }: any) {

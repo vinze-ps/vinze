@@ -18,6 +18,7 @@ import TD1 from "@/lib/assets/projects/trener-diagnosta/trener-diagnosta-1.png";
 import Image from "next/image";
 import { MenuButton } from "./MobileMenuButton/MobileMenuButton";
 import MobileMenu from "./MobileMenu/MobileMenu";
+import { mainMenu } from "@/lib/dictionaries";
 
 const Navbar = () => {
   const [mobileMenuIsOpen, setMobileMenuIsOpen] = React.useState(false);
@@ -40,12 +41,12 @@ const Navbar = () => {
           <NavigationMenu delayDuration={0}>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <Link scroll={false} href="/" legacyBehavior passHref>
-                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-[transparent]")}>Home</NavigationMenuLink>
+                <Link scroll={false} href={mainMenu.home.href} legacyBehavior passHref>
+                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-[transparent]")}>{mainMenu.home.title}</NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-[transparent]">Projects</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="bg-[transparent]">{mainMenu.projects.title}</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                     <li className="row-span-3">
@@ -53,28 +54,28 @@ const Navbar = () => {
                         <Link
                           scroll={false}
                           className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                          href="/projects"
+                          href={mainMenu.projects.items.allProjects.href}
                         >
                           <Image className="rounded-lg" src={TD1} alt={"Trener diagnosta"} width={158} height={88} />
-                          <div className="mb-2 mt-4 text-lg font-medium">All projects</div>
-                          <p className="text-sm leading-tight text-muted-foreground">All projects that I have done so far.</p>
+                          <div className="mb-2 mt-4 text-lg font-medium">{mainMenu.projects.items.allProjects.title}</div>
+                          <p className="text-sm leading-tight text-muted-foreground">{mainMenu.projects.items.allProjects.desc}</p>
                         </Link>
                       </NavigationMenuLink>
                     </li>
-                    <ListItem href="/projects/kapla" title="P88-KaPla">
-                      HR and payroll system for small and medium-sized companies.
+                    <ListItem href={mainMenu.projects.items.kapla.href} title={mainMenu.projects.items.kapla.title}>
+                      {mainMenu.projects.items.kapla.desc}
                     </ListItem>
-                    <ListItem href="/projects/dropui" title="Drop UI">
-                      Drag & drop popups builder.
+                    <ListItem href={mainMenu.projects.items.dropui.href} title={mainMenu.projects.items.dropui.title}>
+                      {mainMenu.projects.items.dropui.desc}
                     </ListItem>
-                    <ListItem href="/projects/trener-diagnosta" title="Trener Diagnosta">
-                      Personal trainer website.
+                    <ListItem href={mainMenu.projects.items.trenerDiagnosta.href} title={mainMenu.projects.items.trenerDiagnosta.title}>
+                      {mainMenu.projects.items.trenerDiagnosta.desc}
                     </ListItem>
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-[transparent]">Blog</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="bg-[transparent]">{mainMenu.blog.title}</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                     <li className="row-span-3">
@@ -82,21 +83,21 @@ const Navbar = () => {
                         <Link
                           scroll={false}
                           className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                          href="/blog"
+                          href={mainMenu.blog.items.allPosts.href}
                         >
-                          <div className="mb-2 mt-4 text-lg font-medium">...</div>
-                          <p className="text-sm leading-tight text-muted-foreground">...</p>
+                          <div className="mb-2 mt-4 text-lg font-medium">{mainMenu.blog.items.allPosts.title}</div>
+                          <p className="text-sm leading-tight text-muted-foreground">{mainMenu.blog.items.allPosts.desc}</p>
                         </Link>
                       </NavigationMenuLink>
                     </li>
-                    <ListItem href="/" title="...">
-                      ...
+                    <ListItem href={mainMenu.blog.items.post1.href} title={mainMenu.blog.items.post1.title}>
+                      {mainMenu.blog.items.post1.desc}
                     </ListItem>
-                    <ListItem href="/" title="...">
-                      ...
+                    <ListItem href={mainMenu.blog.items.post2.href} title={mainMenu.blog.items.post2.title}>
+                      {mainMenu.blog.items.post2.desc}
                     </ListItem>
-                    <ListItem href="/" title="...">
-                      ...
+                    <ListItem href={mainMenu.blog.items.post3.href} title={mainMenu.blog.items.post3.title}>
+                      {mainMenu.blog.items.post3.desc}
                     </ListItem>
                   </ul>
                 </NavigationMenuContent>
@@ -106,8 +107,8 @@ const Navbar = () => {
         </NavbarContent>
         <NavbarContent justify="end">
           <NavbarItem>
-            <Button size="sm" radius="lg" disableAnimation as={Link} color="primary" href="#" variant="solid">
-              About me
+            <Button size="sm" radius="lg" disableAnimation as={Link} color="primary" href={mainMenu.about.href} variant="solid">
+              {mainMenu.about.title}
             </Button>
           </NavbarItem>
           <NavbarItem>

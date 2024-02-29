@@ -6,7 +6,7 @@ import TD1 from "@/lib/assets/projects/trener-diagnosta/trener-diagnosta-1.png";
 import TD2 from "@/lib/assets/projects/trener-diagnosta/trener-diagnosta-2.png";
 import TD3 from "@/lib/assets/projects/trener-diagnosta/trener-diagnosta-3.png";
 import TD_Login_Laptop from "@/lib/assets/projects/trener-diagnosta/trener-diagnosta-login-laptop.png";
-import { childVariants } from "@/utils/transitions";
+import { childVariants } from "@/lib/transitions";
 import AnimatedSectionContainer from "@/components/common/AnimatedSectionContainer/AnimatedSectionContainer";
 import ParallaxItem from "@/components/common/ParallaxItem/ParallaxItem";
 
@@ -31,7 +31,7 @@ const TrenerDiagnosta = () => {
           training services.
         </motion.p>
       </AnimatedSectionContainer>
-      <div className="mt-8 w-full bg-[rgb(210,237,237)] py-8 overflow-hidden h-[75vh] min-h-[500px] max-h-[800px]">
+      <AnimatedSectionContainer className="mt-8 w-full bg-[rgb(210,237,237)] py-8 overflow-hidden h-[75vh] min-h-[500px] max-h-[800px]">
         <ParallaxItem className="max-w-[1536px] mx-auto w-full flex flex-col gap-8">
           <div className="flex justify-center gap-8">{getImage(TD1, "Trener Diagnosta 1", "flex-[50%_0_1]")}</div>
           <div className="flex justify-center gap-8">
@@ -39,7 +39,7 @@ const TrenerDiagnosta = () => {
             {getImage(TD3, "Trener Diagnosta 3", "flex-[100%_0_1]")}
           </div>
         </ParallaxItem>
-      </div>
+      </AnimatedSectionContainer>
       <AnimatedSectionContainer className="max-w-[1024px] mx-auto py-8">
         <motion.p variants={childVariants} className="text-md text-muted-foreground mb-4">
           Key Features: User Authentication: Secure login functionality ensures a personalized and secure experience for each user. Online Booking System: An

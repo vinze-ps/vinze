@@ -1,5 +1,5 @@
 import useSectionAnimations from "@/hooks/use-section-animations";
-import { containerVariants } from "@/utils/transitions";
+import { containerVariants } from "@/lib/transitions";
 import { HTMLMotionProps, motion } from "framer-motion";
 import React, { useRef } from "react";
 

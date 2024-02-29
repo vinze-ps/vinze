@@ -86,13 +86,8 @@ const MobileMenu = ({ isOpen }: { isOpen: boolean }) => {
   };
 
   return (
-    <motion.div
-      initial="closed"
-      animate={isOpen ? "opened" : "closed"}
-      variants={mobileMenuVariant}
-      className={`z-[39] ${styles["mobile-menu"]} md:hidden`}
-    >
-      <motion.ul className="h-full flex flex-col items-center justify-center gap-8" variants={ulVariant}>
+    <motion.div initial="closed" animate={isOpen ? "opened" : "closed"} variants={mobileMenuVariant} className={`z-[39] ${styles["mobile-menu"]} md:hidden`}>
+      <motion.ul className="flex-1 flex flex-col items-center justify-center gap-8" variants={ulVariant}>
         {MOBILE_NAV_ITEMS.map((navItem) => (
           <motion.li whileTap={{ scale: 0.95 }} key={navItem.id}>
             <motion.div className="text-4xl" variants={liVariant}>

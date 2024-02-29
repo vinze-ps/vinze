@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { childVariants } from "@/utils/transitions";
+import { childVariants } from "@/lib/transitions";
 import { Button } from "@nextui-org/react";
 import GitHubIcon from "@/public/icons/github.svg";
 import InstagramIcon from "@/public/icons/instagram.svg";
