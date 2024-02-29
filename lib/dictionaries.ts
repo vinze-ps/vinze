@@ -1,4 +1,4 @@
-export const mainMenu = {
+export const MAIN_MENU = {
   home: {
     title: "Home",
     href: "/",
@@ -6,6 +6,7 @@ export const mainMenu = {
   },
   projects: {
     title: "Projects",
+    href: "/projects",
     items: {
       allProjects: {
         title: "All projects",
@@ -31,6 +32,7 @@ export const mainMenu = {
   },
   blog: {
     title: "Blog",
+    href: "/blog",
     items: {
       allPosts: {
         title: "...",

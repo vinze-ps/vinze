@@ -4,9 +4,10 @@ import { motion, useScroll, useTransform, useSpring, HTMLMotionProps } from "fra
 interface ParallaxProps extends HTMLMotionProps<"div"> {
   children: ReactNode;
   offset?: number;
+  reverse?: boolean;
 }
 
-const ParallaxItem = ({ children, offset = 100, ...props }: ParallaxProps): JSX.Element => {
+const ParallaxItem = ({ children, reverse, offset = 100, ...props }: ParallaxProps): JSX.Element => {
   const [elementTop, setElementTop] = useState(0);
   const [clientHeight, setClientHeight] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
@@ -18,7 +19,7 @@ const ParallaxItem = ({ children, offset = 100, ...props }: ParallaxProps): JSX.
 
   const initial = elementTop - clientHeight;
   const final = elementTop + offset;
-  const yRange = useTransform(scrollY, [initial, final], [offset, -offset]);
+  const yRange = useTransform(scrollY, [initial, final], [offset * (reverse ? -1 : 1), -offset * (reverse ? -1 : 1)]);
   const y = useSpring(yRange, { stiffness: 900, damping: 90 });
 
   useLayoutEffect(() => {
