@@ -1,5 +1,5 @@
 "use client";
-import NoSSR from "@/components/NoSSR/NoSSR";
+import NoSSR from "@/components/HOC/NoSSR";
 import React, { useMemo, useState } from "react";
 import useLocalStorage from "use-local-storage";
 import { IVRAAuth, IVRAModule, IVRAPost, IVRAUserData } from "vinze-react-admin";
