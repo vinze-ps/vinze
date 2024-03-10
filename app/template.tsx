@@ -1,7 +1,7 @@
 "use client";
-import Footer from "@/components/Footer/Footer";
-import Navbar from "@/components/Navbar/Navbar";
-import { variantsOpacity, variantsPerspective, variantsSlide } from "@/utils/transitions";
+import Footer from "@/components/layout/Footer/Footer";
+import Navbar from "@/components/layout/Navbar/Navbar";
+import { variantsOpacity, variantsPerspective, variantsSlide } from "@/lib/transitions";
 import { motion } from "framer-motion";
 
 export default function Template({ children }: any) {
@@ -9,7 +9,7 @@ export default function Template({ children }: any) {
     <motion.div className="w-full h-full">
       <motion.div
         variants={variantsSlide}
-        className="fixed top-[0vh] left-0 bg-background w-[100vw] h-[100vh] z-[50]"
+        className="fixed top-[0vh] left-0 bg-background w-[100vw] h-[100vh] z-[50] shadow-2xl"
         initial="exit"
         exit="exit"
         animate="enter"

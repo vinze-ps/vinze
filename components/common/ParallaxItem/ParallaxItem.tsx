@@ -4,20 +4,23 @@ import { motion, useScroll, useTransform, useSpring, HTMLMotionProps } from "fra
 interface ParallaxProps extends HTMLMotionProps<"div"> {
   children: ReactNode;
   offset?: number;
+  reverse?: boolean;
 }
 
-const ParallaxItem = ({ children, offset = 100, ...props }: ParallaxProps): JSX.Element => {
+const ParallaxItem = ({ children, reverse, offset = 100, ...props }: ParallaxProps): JSX.Element => {
   const [elementTop, setElementTop] = useState(0);
   const [clientHeight, setClientHeight] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
 
-  const { scrollY } = useScroll();
+  const { scrollY } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
 
   const initial = elementTop - clientHeight;
   const final = elementTop + offset;
-  const yRange = useTransform(scrollY, [0, final], [0, -offset]);
-  // const yRange = useTransform(scrollY, [initial, final], [offset, -offset]);
-  const y = useSpring(yRange, { stiffness: 800, damping: 45, mass: 0.5 });
+  const yRange = useTransform(scrollY, [initial, final], [offset * (reverse ? -1 : 1), -offset * (reverse ? -1 : 1)]);
+  const y = useSpring(yRange, { stiffness: 900, damping: 90 });
 
   useLayoutEffect(() => {
     const element = ref.current;

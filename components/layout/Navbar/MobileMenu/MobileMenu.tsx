@@ -1,25 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styles from "./MobileMenu.module.scss";
-
-const MOBILE_NAV_ITEMS = [
-  {
-    id: 0,
-    navTitle: "Home",
-  },
-  {
-    id: 1,
-    navTitle: "Projects",
-  },
-  {
-    id: 2,
-    navTitle: "Blog",
-  },
-  {
-    id: 3,
-    navTitle: "About me",
-  },
-];
+import { MAIN_MENU } from "@/lib/dictionaries";
+import Link from "next/link";
 
 const MobileMenu = ({ isOpen }: { isOpen: boolean }) => {
   const mobileMenuVariant = {
@@ -27,7 +10,7 @@ const MobileMenu = ({ isOpen }: { isOpen: boolean }) => {
       y: "0%",
       transition: {
         delay: 0.15,
-        duration: 1.1,
+        duration: 1.2,
         ease: [0.74, 0, 0.19, 1.02],
       },
     },
@@ -35,7 +18,7 @@ const MobileMenu = ({ isOpen }: { isOpen: boolean }) => {
       y: "-100%",
       transition: {
         delay: 0.35,
-        duration: 0.63,
+        duration: 0.6,
         ease: [0.74, 0, 0.19, 1.02],
       },
     },
@@ -45,7 +28,8 @@ const MobileMenu = ({ isOpen }: { isOpen: boolean }) => {
     opened: {
       opacity: 1,
       transition: {
-        delay: 1.2,
+        duration: 1,
+        delay: 2,
       },
     },
     closed: { opacity: 0 },
@@ -55,7 +39,7 @@ const MobileMenu = ({ isOpen }: { isOpen: boolean }) => {
     opened: {
       transition: {
         delayChildren: 1,
-        staggerChildren: 0.18,
+        staggerChildren: 0.2,
       },
     },
     closed: {
@@ -86,17 +70,12 @@ const MobileMenu = ({ isOpen }: { isOpen: boolean }) => {
   };
 
   return (
-    <motion.div
-      initial="closed"
-      animate={isOpen ? "opened" : "closed"}
-      variants={mobileMenuVariant}
-      className={`z-[39] ${styles["mobile-menu"]} md:hidden`}
-    >
-      <motion.ul className="h-full flex flex-col items-center justify-center gap-8" variants={ulVariant}>
-        {MOBILE_NAV_ITEMS.map((navItem) => (
-          <motion.li whileTap={{ scale: 0.95 }} key={navItem.id}>
+    <motion.div initial="closed" animate={isOpen ? "opened" : "closed"} variants={mobileMenuVariant} className={`z-[39] ${styles["mobile-menu"]} md:hidden`}>
+      <motion.ul className="flex-1 flex flex-col items-center justify-center gap-8" variants={ulVariant}>
+        {Object.keys(MAIN_MENU).map((navKey) => (
+          <motion.li whileTap={{ scale: 0.95 }} key={navKey}>
             <motion.div className="text-4xl" variants={liVariant}>
-              {navItem.navTitle}
+              <Link href={(MAIN_MENU as any)[navKey].href}>{(MAIN_MENU as any)[navKey].title}</Link>
             </motion.div>
           </motion.li>
         ))}
