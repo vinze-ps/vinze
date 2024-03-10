@@ -101,7 +101,7 @@ const MobileMenu = ({ isOpen }: { isOpen: boolean }) => {
           </motion.li>
         ))}
       </motion.ul>
-      <motion.div variants={fadeInVariant} className="text-center">
+      <motion.div variants={fadeInVariant} className="text-center text-default-400 pb-4">
         <h5>+48 791 555 302</h5>
         <h5>patryk.surmacz12@gmail.com</h5>
       </motion.div>
