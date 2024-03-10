@@ -1,11 +1,11 @@
 import { useAnimation, useInView } from "framer-motion";
 import { useEffect } from "react";
 
-const useSectionAnimations = ({ ref }: { ref: any }) => {
+const useSectionAnimations = ({ ref, once }: { ref: any; once?: boolean }) => {
   const controls = useAnimation();
   const inView = useInView(ref, {
     margin: "30px",
-    once: false,
+    once: once ?? false,
   });
 
   useEffect(() => {
