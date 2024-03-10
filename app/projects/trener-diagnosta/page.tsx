@@ -1,13 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
 import React from "react";
-import Image, { StaticImageData } from "next/image";
-import TD1 from "@/lib/assets/projects/trener-diagnosta/trener-diagnosta-1.png";
-import TD2 from "@/lib/assets/projects/trener-diagnosta/trener-diagnosta-2.png";
-import TD3 from "@/lib/assets/projects/trener-diagnosta/trener-diagnosta-3.png";
-import TD4 from "@/lib/assets/projects/trener-diagnosta/trener-diagnosta-4.png";
-import TD5 from "@/lib/assets/projects/trener-diagnosta/trener-diagnosta-5.png";
-import TD_Login_Laptop from "@/lib/assets/projects/trener-diagnosta/trener-diagnosta-login-laptop.png";
+import Image from "next/image";
+import HeroImg from "@/lib/assets/projects/trener-diagnosta/hero.png";
+import TD_Laptop_1 from "@/lib/assets/projects/trener-diagnosta/trener-diagnosta-laptop-1.png";
 import { childVariants } from "@/lib/transitions";
 import AnimatedSectionContainer from "@/components/common/AnimatedSectionContainer/AnimatedSectionContainer";
 import ParallaxItem from "@/components/common/ParallaxItem/ParallaxItem";
@@ -15,17 +11,6 @@ import Marquee from "react-fast-marquee";
 import { Badge } from "@/components/ui/badge";
 
 const TrenerDiagnosta = () => {
-  const getImage = (src: StaticImageData, alt: string, className: string) => {
-    return (
-      <motion.div
-        className={`${className} bg-default-200 rounded-xl p-2 overflow-hidden min-w-[400px]`}
-        variants={childVariants}
-      >
-        <Image className="rounded-lg" src={src} alt={alt} width={790} height={441} />
-      </motion.div>
-    );
-  };
-
   return (
     <>
       <AnimatedSectionContainer className="max-w-[1024px] mx-auto pt-24 px-4">
@@ -43,18 +28,16 @@ const TrenerDiagnosta = () => {
       </AnimatedSectionContainer>
       <AnimatedSectionContainer
         once
-        className="mt-8 w-full bg-[rgb(210,237,237)] py-8 overflow-hidden md:h-[75vh] h-[50vh] min-h-[500px] max-h-[800px]"
+        className="mt-8 w-full bg-[rgb(210,237,237)] overflow-hidden md:h-[75vh] h-[50vh] min-h-[500px] max-h-[800px] relative"
       >
-        <ParallaxItem offset={200} className="max-w-[2048px] mx-auto w-full flex flex-col gap-8">
-          <div className="flex justify-center gap-8 mx-auto">
-            {getImage(TD1, "Trener Diagnosta 1", "flex-[100%_0_1]")}
-            {getImage(TD2, "Trener Diagnosta 2", "flex-[100%_0_1]")}
-            {getImage(TD3, "Trener Diagnosta 3", "flex-[100%_0_1]")}
-          </div>
-          <div className="flex justify-center gap-8 mx-auto">
-            {getImage(TD4, "Trener Diagnosta 4", "flex-[33%_0_1]")}
-            {getImage(TD5, "Trener Diagnosta 5", "flex-[33%_0_1]")}
-          </div>
+        <ParallaxItem offset={100} className="w-full h-full mx-auto">
+          <Image
+            className="w-[140%] max-w-[140%] absolute left-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%]"
+            src={HeroImg}
+            alt={"hero"}
+            width={1920}
+            height={748}
+          />
         </ParallaxItem>
       </AnimatedSectionContainer>
       <AnimatedSectionContainer className="max-w-[1024px] mx-auto py-8 px-4">
@@ -80,7 +63,7 @@ const TrenerDiagnosta = () => {
             <h1 className="px-1 text-4xl font-extrabold tracking-tight lg:text-6xl">TRENER DIAGNOSTA</h1>
           </Marquee>
           <div className="relative max-w-[1024px] mx-auto z-[1]">
-            <Image className="rounded-lg" src={TD_Login_Laptop} alt={"laptop"} width={1200} height={683} />
+            <Image className="rounded-lg" src={TD_Laptop_1} alt={"laptop"} width={1200} height={683} />
           </div>
         </motion.div>
       </AnimatedSectionContainer>

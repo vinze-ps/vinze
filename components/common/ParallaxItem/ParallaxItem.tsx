@@ -1,4 +1,4 @@
-import { useState, useRef, useLayoutEffect, ReactNode } from "react";
+import { useState, useRef, useLayoutEffect, useEffect, ReactNode } from "react";
 import { motion, useScroll, useTransform, useSpring, HTMLMotionProps } from "framer-motion";
 
 interface ParallaxProps extends HTMLMotionProps<"div"> {
@@ -10,16 +10,25 @@ interface ParallaxProps extends HTMLMotionProps<"div"> {
 const ParallaxItem = ({ children, reverse = false, offset = 50, ...props }: ParallaxProps): JSX.Element => {
   const [elementTop, setElementTop] = useState(0);
   const [elementHeight, setElementHeight] = useState(0);
+  const [windowHeight, setWindowHeight] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
 
   const { scrollY } = useScroll();
+
+  useEffect(() => {
+    const updateWindowHeight = () => setWindowHeight(window.innerHeight);
+    window.addEventListener("resize", updateWindowHeight);
+    updateWindowHeight();
+
+    return () => window.removeEventListener("resize", updateWindowHeight);
+  }, []);
 
   const initialYOffset = reverse ? offset : -offset;
   const finalYOffset = reverse ? -offset : offset;
 
   const y = useTransform(
     scrollY,
-    [elementTop - window.innerHeight, elementTop + elementHeight],
+    [elementTop - windowHeight, elementTop + elementHeight],
     [initialYOffset, finalYOffset]
   );
   const spring = useSpring(y, { stiffness: 900, damping: 90 });
