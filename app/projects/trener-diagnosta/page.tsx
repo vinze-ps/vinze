@@ -28,11 +28,11 @@ const TrenerDiagnosta = () => {
       </AnimatedSectionContainer>
       <AnimatedSectionContainer
         once
-        className="mt-8 w-full bg-[rgb(210,237,237)] overflow-hidden md:h-[75vh] h-[50vh] min-h-[500px] max-h-[800px] relative"
+        className="mt-8 w-full bg-[rgb(210,237,237)] overflow-hidden md:h-[75vh] h-[40vh] min-h-[400px] max-h-[800px] relative"
       >
-        <ParallaxItem offset={100} className="w-full h-full mx-auto">
+        <ParallaxItem variants={childVariants} offset={100} className="w-full h-full mx-auto">
           <Image
-            className="w-[140%] max-w-[140%] absolute left-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%]"
+            className="w-[140%] max-w-[140%] min-w-[1047px] absolute left-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%]"
             src={HeroImg}
             alt={"hero"}
             width={1920}
@@ -57,7 +57,7 @@ const TrenerDiagnosta = () => {
           Role: Frontend Developer
         </motion.p>
       </AnimatedSectionContainer>
-      <AnimatedSectionContainer className="py-8">
+      <AnimatedSectionContainer once className="py-8">
         <motion.div className="relative" variants={childVariants}>
           <Marquee className="!absolute top-[50%] translate-y-[-50%]" autoFill>
             <h1 className="px-1 text-4xl font-extrabold tracking-tight lg:text-6xl">TRENER DIAGNOSTA</h1>

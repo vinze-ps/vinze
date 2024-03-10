@@ -60,7 +60,7 @@ export const containerVariants = {
 };
 
 export const childVariants = {
-  hidden: { y: 15, opacity: 0 },
+  hidden: { y: "15%", opacity: 0 },
   visible: {
     y: 0,
     opacity: 1,
