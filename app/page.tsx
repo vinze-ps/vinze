@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { childVariants } from "@/lib/transitions";
+import { animatedSectionChildVariants } from "@/lib/transitions";
 import { Button } from "@nextui-org/react";
 import GitHubIcon from "@/public/icons/github.svg";
 import InstagramIcon from "@/public/icons/instagram.svg";
@@ -71,10 +71,10 @@ export default function Home() {
         </div>
         <div className="px-4 max-w-[1024px] mx-auto w-full flex flex-col z-[1]">
           <div className="w-full flex flex-col max-w-[512px]">
-            <motion.h1 variants={childVariants} className="text-6xl font-extrabold tracking-tight lg:text-8xl mb-4">
+            <motion.h1 variants={animatedSectionChildVariants} className="text-6xl font-extrabold tracking-tight lg:text-8xl mb-4">
               Hello.
             </motion.h1>
-            <motion.p variants={childVariants} className="text-md text-muted-foreground">
+            <motion.p variants={animatedSectionChildVariants} className="text-md text-muted-foreground">
               My name is Patryk, and I&apos;ve been a programmer since 2018. In 2021, I embarked on a professional journey as a programmer with{" "}
               <a href="https://www.p88.pl" target="_blank" className="text-[hsl(var(--light-blue))]">
                 {" "}
@@ -88,25 +88,25 @@ export default function Home() {
               . Primarily, I am a full-stack developer with a stronger inclination towards frontend development. Additionally, I am pursuing a degree in
               Computer Science at the West Pomeranian University of Technology in Szczecin.
             </motion.p>
-            <motion.div variants={childVariants} className="mt-16">
+            <motion.div variants={animatedSectionChildVariants} className="mt-16">
               <Button disableRipple size="lg" className="rounded-full bg-[hsl(var(--light-blue))] text-[white]">
                 My work
               </Button>
             </motion.div>
-            <motion.p variants={childVariants} className="mt-16">
+            <motion.p variants={animatedSectionChildVariants} className="mt-16">
               Find me at
             </motion.p>
             <div className="flex gap-4 mt-2">
-              <motion.a variants={childVariants} href="https://github.com/vinze-ps">
+              <motion.a variants={animatedSectionChildVariants} href="https://github.com/vinze-ps">
                 <GitHubIcon className="[&>path]:fill-[black]" />
               </motion.a>
-              <motion.a variants={childVariants} href="https://www.instagram.com/_patryk_surmacz_/">
+              <motion.a variants={animatedSectionChildVariants} href="https://www.instagram.com/_patryk_surmacz_/">
                 <InstagramIcon className="[&>path]:fill-[black]" />
               </motion.a>
-              <motion.a variants={childVariants} href="https://www.linkedin.com/in/patryk-surmacz-39a12019a/">
+              <motion.a variants={animatedSectionChildVariants} href="https://www.linkedin.com/in/patryk-surmacz-39a12019a/">
                 <LinkedInIcon className="[&>path]:fill-[black]" />
               </motion.a>
-              <motion.a variants={childVariants} href="https://www.facebook.com/patryk.surmacz.12/">
+              <motion.a variants={animatedSectionChildVariants} href="https://www.facebook.com/patryk.surmacz.12/">
                 <FacebookIcon className="[&>path]:fill-[black]" />
               </motion.a>
             </div>
@@ -114,10 +114,25 @@ export default function Home() {
         </div>
       </AnimatedSectionContainer>
       <AnimatedSectionContainer className="my-16 md:my-32 w-full max-w-[1024px] mx-auto flex gap-8 z-[1] relative flex-col md:flex-row px-4">
-        <div className={`bg-[hsl(var(--light-purple))] w-full h-[600px] rounded-lg`}>
-          <Lines1 className="w-full h-full rounded-lg" />
+        <div className={`bg-[hsl(var(--light-purple))] w-full h-[600px] rounded-lg relative p-8 shadow-xl`}>
+          <Lines1 className="w-full h-full rounded-lg absolute left-0 top-0 z-[0]" />
+          <motion.h1 variants={animatedSectionChildVariants} className="text-4xl font-extrabold tracking-tight lg:text-6xl mb-4 text-default">
+            Design.
+          </motion.h1>
+          <motion.p variants={animatedSectionChildVariants} className="text-md text-default-300">
+            I am passionate about creating beautiful and functional user interfaces. My design process is centered around the user experience, ensuring that the
+            final product is both visually appealing and easy to use.
+          </motion.p>
         </div>
-        <div className="bg-default-50 w-full h-[600px] rounded-lg"></div>
+        <div className="bg-default-50 w-full h-[600px] rounded-lg p-8 shadow-xl">
+          <motion.h1 variants={animatedSectionChildVariants} className="text-4xl font-extrabold tracking-tight lg:text-6xl mb-4 text-primary">
+            Development.
+          </motion.h1>
+          <motion.p variants={animatedSectionChildVariants} className="text-md text-muted-foreground">
+            I am a full-stack developer with a strong inclination towards frontend development. I specialize in building web applications using modern
+            technologies such as React, NextJS, and TailwindCSS.
+          </motion.p>
+        </div>
       </AnimatedSectionContainer>
       <Marquee className="mb-8 md:mb-16" autoFill gradient gradientColor="#fff">
         {marqueeIcons

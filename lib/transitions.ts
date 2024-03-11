@@ -1,6 +1,6 @@
 import { Variants } from "framer-motion";
 
-export const variantsSlide: Variants = {
+export const slidePageVariants: Variants = {
   exit: {
     opacity: 1,
     x: 0,
@@ -11,7 +11,7 @@ export const variantsSlide: Variants = {
   enter: { x: 0, y: "100vh", transitionDuration: "0s", transitionEnd: { opacity: 1, transitionDuration: "0s" } },
 };
 
-export const variantsOpacity: Variants = {
+export const opacityPageVariants: Variants = {
   initial: {
     opacity: 0,
   },
@@ -30,7 +30,7 @@ export const variantsOpacity: Variants = {
   },
 };
 
-export const variantsPerspective: Variants = {
+export const perspectivePageVariants: Variants = {
   initial: {
     scale: 1,
     y: 0,
@@ -50,7 +50,7 @@ export const variantsPerspective: Variants = {
   },
 };
 
-export const containerVariants = {
+export const animatedSectionVariants: Variants = {
   hidden: {},
   visible: {
     transition: {
@@ -59,7 +59,7 @@ export const containerVariants = {
   },
 };
 
-export const childVariants = {
+export const animatedSectionChildVariants: Variants = {
   hidden: { y: "15%", opacity: 0 },
   visible: {
     y: 0,
