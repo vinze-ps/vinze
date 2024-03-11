@@ -1,4 +1,6 @@
 "use client";
+import Image from "next/image";
+import EarthImg from "@/lib/assets/images/earth.png";
 import { motion } from "framer-motion";
 import { animatedSectionChildVariants } from "@/lib/transitions";
 import { Button } from "@nextui-org/react";
@@ -71,11 +73,15 @@ export default function Home() {
         </div>
         <div className="px-4 max-w-[1024px] mx-auto w-full flex flex-col z-[1]">
           <div className="w-full flex flex-col max-w-[512px]">
-            <motion.h1 variants={animatedSectionChildVariants} className="text-6xl font-extrabold tracking-tight lg:text-8xl mb-4">
+            <motion.h1
+              variants={animatedSectionChildVariants}
+              className="text-6xl font-extrabold tracking-tight lg:text-8xl mb-4"
+            >
               Hello.
             </motion.h1>
             <motion.p variants={animatedSectionChildVariants} className="text-md text-muted-foreground">
-              My name is Patryk, and I&apos;ve been a programmer since 2018. In 2021, I embarked on a professional journey as a programmer with{" "}
+              My name is Patryk, and I&apos;ve been a programmer since 2018. In 2021, I embarked on a professional
+              journey as a programmer with{" "}
               <a href="https://www.p88.pl" target="_blank" className="text-[hsl(var(--light-blue))]">
                 {" "}
                 Personal&apos;88
@@ -85,8 +91,9 @@ export default function Home() {
                 {" "}
                 Softwarelogic
               </a>
-              . Primarily, I am a full-stack developer with a stronger inclination towards frontend development. Additionally, I am pursuing a degree in
-              Computer Science at the West Pomeranian University of Technology in Szczecin.
+              . Primarily, I am a full-stack developer with a stronger inclination towards frontend development.
+              Additionally, I am pursuing a degree in Computer Science at the West Pomeranian University of Technology
+              in Szczecin.
             </motion.p>
             <motion.div variants={animatedSectionChildVariants} className="mt-16">
               <Button disableRipple size="lg" className="rounded-full bg-[hsl(var(--light-blue))] text-[white]">
@@ -103,7 +110,10 @@ export default function Home() {
               <motion.a variants={animatedSectionChildVariants} href="https://www.instagram.com/_patryk_surmacz_/">
                 <InstagramIcon className="[&>path]:fill-[black]" />
               </motion.a>
-              <motion.a variants={animatedSectionChildVariants} href="https://www.linkedin.com/in/patryk-surmacz-39a12019a/">
+              <motion.a
+                variants={animatedSectionChildVariants}
+                href="https://www.linkedin.com/in/patryk-surmacz-39a12019a/"
+              >
                 <LinkedInIcon className="[&>path]:fill-[black]" />
               </motion.a>
               <motion.a variants={animatedSectionChildVariants} href="https://www.facebook.com/patryk.surmacz.12/">
@@ -116,22 +126,29 @@ export default function Home() {
       <AnimatedSectionContainer className="my-16 md:my-32 w-full max-w-[1024px] mx-auto flex gap-8 z-[1] relative flex-col md:flex-row px-4">
         <div className={`bg-[hsl(var(--light-purple))] w-full h-[600px] rounded-lg relative p-8 shadow-xl`}>
           <Lines1 className="w-full h-full rounded-lg absolute left-0 top-0 z-[0]" />
-          <motion.h1 variants={animatedSectionChildVariants} className="text-4xl font-extrabold tracking-tight lg:text-6xl mb-4 text-default">
+          <motion.h1
+            variants={animatedSectionChildVariants}
+            className="text-4xl font-extrabold tracking-tight lg:text-6xl mb-4 text-[hsl(var(--background))]"
+          >
             Design.
           </motion.h1>
-          <motion.p variants={animatedSectionChildVariants} className="text-md text-default-300">
-            I am passionate about creating beautiful and functional user interfaces. My design process is centered around the user experience, ensuring that the
-            final product is both visually appealing and easy to use.
+          <motion.p variants={animatedSectionChildVariants} className="text-md text-default-200">
+            I am passionate about creating beautiful and functional user interfaces. My design process is centered
+            around the user experience, ensuring that the final product is both visually appealing and easy to use.
           </motion.p>
         </div>
-        <div className="bg-default-50 w-full h-[600px] rounded-lg p-8 shadow-xl">
-          <motion.h1 variants={animatedSectionChildVariants} className="text-4xl font-extrabold tracking-tight lg:text-6xl mb-4 text-primary">
+        <div className="bg-default-50 w-full h-[600px] rounded-lg p-8 shadow-xl overflow-hidden">
+          <motion.h1
+            variants={animatedSectionChildVariants}
+            className="text-4xl font-extrabold tracking-tight lg:text-6xl mb-4 text-primary"
+          >
             Development.
           </motion.h1>
           <motion.p variants={animatedSectionChildVariants} className="text-md text-muted-foreground">
-            I am a full-stack developer with a strong inclination towards frontend development. I specialize in building web applications using modern
-            technologies such as React, NextJS, and TailwindCSS.
+            I am a full-stack developer with a strong inclination towards frontend development. I specialize in building
+            web applications using modern technologies such as React, NextJS, and TailwindCSS.
           </motion.p>
+          <Image className="rounded-lg" src={EarthImg} alt={"earth"} width={510} height={510} />
         </div>
       </AnimatedSectionContainer>
       <Marquee className="mb-8 md:mb-16" autoFill gradient gradientColor="#fff">
