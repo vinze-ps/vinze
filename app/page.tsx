@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
-import EarthImg from "@/lib/assets/images/earth.png";
-import { motion } from "framer-motion";
+import GemImg from "@/lib/assets/images/gem.png";
+import { motion, useScroll } from "framer-motion";
 import { animatedSectionChildVariants } from "@/lib/transitions";
 import { Button } from "@nextui-org/react";
 import GitHubIcon from "@/public/icons/github.svg";
@@ -19,8 +19,15 @@ import HTML5Icon from "@/public/icons/html5.svg";
 import Lines1 from "@/public/icons/lines1.svg";
 import Marquee from "react-fast-marquee";
 import AnimatedSectionContainer from "@/components/common/AnimatedSectionContainer/AnimatedSectionContainer";
+import { useRef } from "react";
 
 export default function Home() {
+  const abstractObjectsBgRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: abstractObjectsBgRef,
+    offset: ["end end", "start start"],
+  });
+
   const marqueeIcons = [
     {
       icon: <HTML5Icon className="[&>path]:fill-[black]" />,
@@ -137,21 +144,27 @@ export default function Home() {
             around the user experience, ensuring that the final product is both visually appealing and easy to use.
           </motion.p>
         </div>
-        <div className="bg-default-50 w-full h-[600px] rounded-lg p-8 shadow-xl overflow-hidden">
+        <div className="bg-default-50 w-full h-[600px] rounded-lg p-8 shadow-xl overflow-hidden relative">
           <motion.h1
             variants={animatedSectionChildVariants}
             className="text-4xl font-extrabold tracking-tight lg:text-6xl mb-4 text-primary"
           >
             Development.
           </motion.h1>
-          <motion.p variants={animatedSectionChildVariants} className="text-md text-muted-foreground">
+          <motion.p variants={animatedSectionChildVariants} className="text-md text-muted-foreground f">
             I am a full-stack developer with a strong inclination towards frontend development. I specialize in building
             web applications using modern technologies such as React, NextJS, and TailwindCSS.
           </motion.p>
-          <Image className="rounded-lg" src={EarthImg} alt={"earth"} width={510} height={510} />
+          <Image
+            className="rounded-lg absolute bottom-[0%] left-[50%] translate-x-[-50%]"
+            src={GemImg}
+            alt={"gem"}
+            width={400}
+            height={400}
+          />
         </div>
       </AnimatedSectionContainer>
-      <Marquee className="mb-8 md:mb-16" autoFill gradient gradientColor="#fff">
+      <Marquee className="mb-8 md:mb-16" autoFill gradient gradientColor="hsl(var(--background))">
         {marqueeIcons
           .filter((icon) => icon.group === 1)
           .map((icon, index) => (
@@ -160,7 +173,7 @@ export default function Home() {
             </div>
           ))}
       </Marquee>
-      <Marquee className="mb-16 md:mb-32" autoFill gradient gradientColor="#fff" direction="right">
+      <Marquee className="mb-16 md:mb-32" autoFill gradient gradientColor="hsl(var(--background))" direction="right">
         {marqueeIcons
           .filter((icon) => icon.group === 2)
           .map((icon, index) => (
@@ -169,6 +182,18 @@ export default function Home() {
             </div>
           ))}
       </Marquee>
+      <div className="w-full h-[100vh] overflow-hidden relative">
+        <video
+          className="absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] min-h-full min-w-full max-w-[none]"
+          muted
+          autoPlay
+          loop
+          preload="auto"
+        >
+          <source src="/videos/Abstract_objects_dark.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
     </>
   );
 }
