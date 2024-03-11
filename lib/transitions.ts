@@ -6,6 +6,10 @@ export const slidePageVariants: Variants = {
     x: 0,
     y: "0vh",
     transitionDuration: "0s",
+    transition: {
+      duration: 1.2,
+      ease: [0.74, 0, 0.19, 1.02],
+    },
     transitionEnd: { opacity: 0, transitionDuration: "1s" },
   },
   enter: { x: 0, y: "100vh", transitionDuration: "0s", transitionEnd: { opacity: 1, transitionDuration: "0s" } },
@@ -66,4 +70,9 @@ export const animatedSectionChildVariants: Variants = {
     opacity: 1,
     transition: { type: "spring", stiffness: 50 },
   },
+};
+
+export const animatedSectionChildOpacityVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { type: "spring", stiffness: 50 } },
 };

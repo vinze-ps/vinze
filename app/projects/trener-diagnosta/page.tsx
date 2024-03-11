@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import HeroImg from "@/lib/assets/projects/trener-diagnosta/hero.png";
 import TD_Laptop_1 from "@/lib/assets/projects/trener-diagnosta/trener-diagnosta-laptop-1.png";
-import { animatedSectionChildVariants } from "@/lib/transitions";
+import { animatedSectionChildOpacityVariants, animatedSectionChildVariants } from "@/lib/transitions";
 import AnimatedSectionContainer from "@/components/common/AnimatedSectionContainer/AnimatedSectionContainer";
 import ParallaxItem from "@/components/common/ParallaxItem/ParallaxItem";
 import Marquee from "react-fast-marquee";
@@ -27,7 +27,7 @@ const TrenerDiagnosta = () => {
         </motion.p>
       </AnimatedSectionContainer>
       <AnimatedSectionContainer once className="mt-8 w-full bg-[rgb(210,237,237)] overflow-hidden md:h-[75vh] h-[40vh] min-h-[400px] max-h-[800px] relative">
-        <ParallaxItem variants={animatedSectionChildVariants} offset={100} className="w-full h-full mx-auto">
+        <ParallaxItem variants={animatedSectionChildOpacityVariants} offset={100} className="w-full h-full mx-auto">
           <Image
             priority
             className="w-[140%] max-w-[140%] min-w-[1047px] absolute left-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%]"
