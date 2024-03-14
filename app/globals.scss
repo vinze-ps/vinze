@@ -5,6 +5,7 @@
 @layer base {
   :root {
     --background: 225, 36%, 96%;
+    --background-transparent: 225, 36%, 96%, 0.8;
     --foreground: 0 0% 0%;
     --card: 225, 36%, 96%;
     --card-foreground: 0 0% 0%;
@@ -32,6 +33,7 @@
 
   .dark {
     --background: 0 0% 0%;
+    --background-transparent: 0 0% 0%, 0.8;
     --foreground: 225, 36%, 96%;
     --card: 0 0% 0%;
     --card-foreground: 225, 36%, 96%;
@@ -70,6 +72,7 @@
 
 html,
 body {
+  color: #f1f3f8;
   box-sizing: border-box;
   width: 100%;
   height: 100%;
