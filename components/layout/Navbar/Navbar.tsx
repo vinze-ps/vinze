@@ -36,8 +36,8 @@ const Navbar = () => {
         }}
       >
         <NavbarBrand>
-          <Link scroll={false} href="/">
-            <VinzeLogo className="w-[80px]" />
+          <Link className="w-[80px]" scroll={false} href="/">
+            <VinzeLogo className="w-full" />
             {/* <p className="font-bold text-inherit">
             VINZE
             </p> */}

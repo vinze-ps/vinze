@@ -10,23 +10,23 @@ const StickySection = () => {
     offset: ["start start", "end end"],
   });
 
-  const opacity1 = useTransform(scrollYProgress, [0, 0.25, 0.3], [0, 1, 0]);
-  const scale1 = useTransform(scrollYProgress, [0, 0.25], [0.95, 1]);
-  const y1 = useTransform(scrollYProgress, [0, 0.25, 0.3], ["0%", "0%", "-75%"]);
+  const opacity1 = useTransform(scrollYProgress, [0, 0.15, 0.25, 0.3], [0, 1, 1, 0]);
+  const scale1 = useTransform(scrollYProgress, [0, 0.15], [0.95, 1]);
+  const y1 = useTransform(scrollYProgress, [0.25, 0.3], ["0%", "-75%"]);
 
-  const opacity2 = useTransform(scrollYProgress, [0.25, 0.55, 0.6], [0, 1, 0]);
-  const scale2 = useTransform(scrollYProgress, [0.25, 0.55], [0.95, 1]);
-  const y2 = useTransform(scrollYProgress, [0.25, 0.5, 0.6], ["0%", "0%", "-75%"]);
+  const opacity2 = useTransform(scrollYProgress, [0.25, 0.4, 0.5, 0.55], [0, 1, 1, 0]);
+  const scale2 = useTransform(scrollYProgress, [0.25, 0.4], [0.95, 1]);
+  const y2 = useTransform(scrollYProgress, [0.5, 0.55], ["0%", "-75%"]);
 
-  const opacity3 = useTransform(scrollYProgress, [0.55, 0.85, 0.9], [0, 1, 0]);
-  const scale3 = useTransform(scrollYProgress, [0.55, 0.85], [0.95, 1]);
-  const y3 = useTransform(scrollYProgress, [0.55, 0.8, 0.9], ["0%", "0%", "-75%"]);
+  const opacity3 = useTransform(scrollYProgress, [0.5, 0.65, 0.75, 0.8], [0, 1, 1, 0]);
+  const scale3 = useTransform(scrollYProgress, [0.5, 0.65], [0.95, 1]);
+  const y3 = useTransform(scrollYProgress, [0.75, 0.8], ["0%", "-75%"]);
 
   return (
     <div ref={containerRef} className="w-full h-[300vh] relative">
       <div className="w-full h-[100vh] overflow-hidden sticky top-0 left-0">
         <motion.div
-          className="absolute top-[50%] left-[50%] z-[1]"
+          className="absolute top-[50%] left-[50%] z-[1] text-[white] w-full px-4"
           style={{ opacity: opacity1, scale: scale1, y: y1, translateY: "-50%", translateX: "-50%" }}
         >
           <h1 className="text-4xl font-extrabold tracking-tight lg:text-6xl">May 2018</h1>
@@ -38,7 +38,7 @@ const StickySection = () => {
           </p>
         </motion.div>
         <motion.div
-          className="absolute top-[50%] left-[50%] z-[1]"
+          className="absolute top-[50%] left-[50%] z-[1] text-[white] w-full px-4"
           style={{ opacity: opacity2, scale: scale2, y: y2, translateY: "-50%", translateX: "-50%" }}
         >
           <h1 className="text-4xl font-extrabold tracking-tight lg:text-6xl">June 2021</h1>
@@ -54,7 +54,7 @@ const StickySection = () => {
           </p>
         </motion.div>
         <motion.div
-          className="absolute top-[50%] left-[50%] z-[1]"
+          className="absolute top-[50%] left-[50%] z-[1] text-[white] w-full px-4"
           style={{ opacity: opacity3, scale: scale3, y: y3, translateY: "-50%", translateX: "-50%" }}
         >
           <h1 className="text-4xl font-extrabold tracking-tight lg:text-6xl">September 2021</h1>
@@ -74,7 +74,7 @@ const StickySection = () => {
           loop
           preload="auto"
         >
-          <source src="/videos/Abstract_objects_light.mp4" type="video/mp4" />
+          <source src="/videos/Abstract_objects_dark.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
