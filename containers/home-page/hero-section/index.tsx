@@ -13,7 +13,7 @@ const HeroSection = () => {
     <AnimatedSectionContainer className="w-full flex gap-8 md:items-center items-start justify-start relative h-[75vh] md:h-[100vh] pt-32 md:pt-0">
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
         <video
-          className="absolute top-[50%] left-[60%] translate-y-[-50%] translate-x-[-50%] min-h-full min-w-full max-w-[none]"
+          className="absolute lg:bottom-[50%] bottom-[30%] left-[60%] translate-y-[-50%] translate-x-[-50%] max-h-full min-w-full max-w-[none]"
           muted
           autoPlay
           loop
