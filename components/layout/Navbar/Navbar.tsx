@@ -28,7 +28,7 @@ const Navbar = () => {
     <>
       <NavbarNEXT
         className={`h-14 relative top-0 border-b-1 left-0 bg-[hsla(var(--background))] backdrop-blur-none ${
-          mobileMenuIsOpen ? "bg-[white] duration-[3s] transition-all" : ""
+          mobileMenuIsOpen ? "duration-[3s] transition-all" : ""
         }`}
         // className={`h-14 fixed top-0 border-b-1 left-0 bg-[hsla(var(--background-transparent))] ${
         //   mobileMenuIsOpen ? "bg-[white] duration-[3s] transition-all backdrop-blur-none" : ""
@@ -39,7 +39,7 @@ const Navbar = () => {
         }}
       >
         <NavbarBrand>
-          <Link className="w-[80px]" scroll={false} href="/">
+          <Link className="w-[60px]" scroll={false} href="/">
             <VinzeLogo className="w-full" />
             {/* <p className="font-bold text-inherit">
             VINZE

@@ -11,7 +11,7 @@ const StickySection = () => {
   });
 
   const scaleBg = useTransform(scrollYProgress, [0, 0.15], [0.9, 1]);
-  const yBg = useTransform(scrollYProgress, [0, 0.15], ["5%", "0%"]);
+  const yBg = useTransform(scrollYProgress, [0, 0.15], ["1vw", "0vw"]);
   const roundedBg = useTransform(scrollYProgress, [0, 0.15], [32, 0]);
 
   const opacity1 = useTransform(scrollYProgress, [0.2, 0.35, 0.45, 0.5], [0, 1, 1, 0]);

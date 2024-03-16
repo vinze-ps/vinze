@@ -13,7 +13,7 @@ const Footer = () => {
       >
         <div className="w-full p-6 h-[50vh] container">
           <div className="w-max">
-            <VinzeLogo className="w-full max-w-[300px] [&>g]:fill-[white]" />
+            <VinzeLogo className="w-full max-w-[200px] [&>g]:fill-[white]" />
             <div className="tracking-widest text-center text-default-400 mt-2">BY PATRYK SURMACZ</div>
           </div>
         </div>

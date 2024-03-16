@@ -15,18 +15,18 @@ const MobileMenuButton = ({ onClick = () => undefined }: Props) => {
     closed: {
       x1: "15%",
       x2: "100%",
-      y1: "4",
-      y2: "4",
+      y1: "8",
+      y2: "8",
       rotate: 0,
       translateY: 0,
     },
     opened: {
       x1: "0%",
       x2: "100%",
-      y1: "4",
-      y2: "4",
+      y1: "8",
+      y2: "8",
       rotate: -45,
-      translateY: 8,
+      translateY: 4,
     },
   };
 
@@ -34,18 +34,18 @@ const MobileMenuButton = ({ onClick = () => undefined }: Props) => {
     closed: {
       x1: "30%",
       x2: "100%",
-      y1: "12",
-      y2: "12",
+      y1: "16",
+      y2: "16",
       rotate: 0,
       translateY: 0,
     },
     opened: {
       x1: "0%",
       x2: "100%",
-      y1: "12",
-      y2: "12",
+      y1: "16",
+      y2: "16",
       rotate: 45,
-      translateY: 0,
+      translateY: -4,
     },
   };
 
@@ -83,7 +83,7 @@ const MobileMenuButton = ({ onClick = () => undefined }: Props) => {
           {...lineProps}
           style={{
             originX: "50%",
-            originY: "4px",
+            originY: "8px",
           }}
         />
         <motion.line
@@ -91,7 +91,7 @@ const MobileMenuButton = ({ onClick = () => undefined }: Props) => {
           {...lineProps}
           style={{
             originX: "50%",
-            originY: "12px",
+            originY: "16px",
           }}
         />
       </motion.svg>
