@@ -27,9 +27,12 @@ const Navbar = () => {
   return (
     <>
       <NavbarNEXT
-        className={`h-14 fixed top-0 border-b-1 left-0 bg-[hsla(var(--background-transparent))] ${
-          mobileMenuIsOpen ? "bg-[white] duration-[3s] transition-all backdrop-blur-none" : ""
+        className={`h-14 relative top-0 border-b-1 left-0 bg-[hsla(var(--background))] backdrop-blur-none ${
+          mobileMenuIsOpen ? "bg-[white] duration-[3s] transition-all" : ""
         }`}
+        // className={`h-14 fixed top-0 border-b-1 left-0 bg-[hsla(var(--background-transparent))] ${
+        //   mobileMenuIsOpen ? "bg-[white] duration-[3s] transition-all backdrop-blur-none" : ""
+        // }`}
         classNames={{
           item: ["font-sm", "flex", "relative", "h-full", "items-center", "data-[active=true]:after:bg-primary"],
           wrapper: "px-4",

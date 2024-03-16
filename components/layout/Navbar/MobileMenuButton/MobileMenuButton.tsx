@@ -30,35 +30,22 @@ const MobileMenuButton = ({ onClick = () => undefined }: Props) => {
     },
   };
 
-  const center = {
-    closed: {
-      opacity: 1,
-      x1: "0",
-      x2: "100%",
-      y1: "12", // środek SVG
-      y2: "12",
-    },
-    opened: {
-      opacity: 0,
-    },
-  };
-
   const bottom = {
     closed: {
       x1: "30%",
       x2: "100%",
-      y1: "20",
-      y2: "20",
+      y1: "12",
+      y2: "12",
       rotate: 0,
       translateY: 0,
     },
     opened: {
       x1: "0%",
       x2: "100%",
-      y1: "20",
-      y2: "20",
+      y1: "12",
+      y2: "12",
       rotate: 45,
-      translateY: -8,
+      translateY: 0,
     },
   };
 
@@ -99,13 +86,12 @@ const MobileMenuButton = ({ onClick = () => undefined }: Props) => {
             originY: "4px",
           }}
         />
-        <motion.line variants={center} {...lineProps} />
         <motion.line
           variants={bottom}
           {...lineProps}
           style={{
             originX: "50%",
-            originY: "20px",
+            originY: "12px",
           }}
         />
       </motion.svg>

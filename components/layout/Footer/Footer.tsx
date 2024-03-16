@@ -1,5 +1,6 @@
 import { useInView } from "framer-motion";
 import React, { useRef } from "react";
+import VinzeLogo from "@/public/icons/vinze.svg";
 
 const Footer = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -11,7 +12,10 @@ const Footer = () => {
         className={`${inView ? "fixed" : "hidden"} bottom-0 bg-[black] text-[white] w-full h-[100vh] flex items-end`}
       >
         <div className="w-full p-6 h-[50vh] container">
-          <h1 className="text-6xl font-extrabold tracking-tight lg:text-8xl mb-4">vinze</h1>
+          <div className="w-max">
+            <VinzeLogo className="w-full max-w-[300px] [&>g]:fill-[white]" />
+            <div className="tracking-widest text-center text-default-400 mt-2">BY PATRYK SURMACZ</div>
+          </div>
         </div>
       </div>
     </div>

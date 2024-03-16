@@ -7,7 +7,6 @@ import { motion } from "framer-motion";
 export default function Template({ children }: any) {
   return (
     <motion.div className="w-full h-full">
-      <Navbar />
       <motion.div
         variants={slidePageVariants}
         className="fixed top-[0vh] left-0 bg-background w-[100vw] h-[100vh] z-[50] shadow-2xl"
@@ -25,6 +24,7 @@ export default function Template({ children }: any) {
         variants={perspectivePageVariants}
       >
         <motion.div initial="initial" exit="exit" animate="enter" variants={opacityPageVariants}>
+          <Navbar />
           <div className="z-[1] bg-background relative w-full mx-auto min-h-[calc(100vh-4rem)]">
             <main className="w-full">{children}</main>
           </div>

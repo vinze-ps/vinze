@@ -13,7 +13,7 @@ const HeroSection = () => {
     <AnimatedSectionContainer className="w-full flex gap-8 md:items-center items-start justify-start relative h-[75vh] md:h-[100vh] pt-32 md:pt-0">
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
         <video
-          className="absolute lg:bottom-[50%] bottom-[30%] left-[60%] translate-y-[-50%] translate-x-[-50%] max-h-full min-w-full max-w-[none]"
+          className="absolute lg:bottom-[50%] bottom-[30%] left-[60%] translate-y-[50%] translate-x-[-50%] max-h-full h-auto min-w-full max-w-[none]"
           muted
           autoPlay
           loop
@@ -34,12 +34,12 @@ const HeroSection = () => {
           <motion.p variants={animatedSectionChildVariants} className="text-md text-muted-foreground">
             My name is Patryk, and I&apos;ve been a programmer since 2018. In 2021, I embarked on a professional journey
             as a programmer with{" "}
-            <a href="https://www.p88.pl" target="_blank" className="text-[hsl(var(--light-blue))]">
+            <a href="https://www.p88.pl" target="_blank" className="text-[hsl(var(--blue))]">
               {" "}
               Personal&apos;88
             </a>
             , concurrently joining the team at{" "}
-            <a href="https://softwarelogic.co/" target="_blank" className="text-[hsl(var(--light-blue))]">
+            <a href="https://softwarelogic.co/" target="_blank" className="text-[hsl(var(--blue))]">
               {" "}
               Softwarelogic
             </a>
@@ -48,7 +48,7 @@ const HeroSection = () => {
             Szczecin.
           </motion.p>
           <motion.div variants={animatedSectionChildVariants} className="mt-16">
-            <Button disableRipple size="lg" className="rounded-full bg-[hsl(var(--light-blue))] text-[white]">
+            <Button disableRipple size="lg" className="rounded-full bg-[hsl(var(--blue))] text-[white]">
               My work
             </Button>
           </motion.div>
