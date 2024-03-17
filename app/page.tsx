@@ -1,4 +1,3 @@
-"use client";
 import HeroSection from "@/containers/home-page/hero-section";
 import CardSection from "@/containers/home-page/cards-section";
 import MarqueesSection from "@/containers/home-page/marquees-section";

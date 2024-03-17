@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { Navbar as NavbarNEXT, NavbarBrand, NavbarContent, NavbarItem, Button } from "@nextui-org/react";
 import {

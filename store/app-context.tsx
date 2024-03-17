@@ -1,11 +1,7 @@
-"use client";
-
 import React, { createContext, useState } from "react";
 
 interface AppContextValue {}
-
 const initialContextValue: AppContextValue = {};
-
 const AppContext = createContext<AppContextValue>(initialContextValue);
 
 const AppContextProvider = ({ children }: { children: React.ReactNode }) => {

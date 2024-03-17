@@ -1,4 +1,3 @@
-"use client";
 import { useInView } from "framer-motion";
 import React, { useRef } from "react";
 import VinzeLogo from "@/public/icons/vinze.svg";

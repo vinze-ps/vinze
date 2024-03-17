@@ -1,5 +1,3 @@
-"use client";
-
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import FrozenRoute from "./FrozenRoute";
