@@ -1,5 +1,3 @@
-"use client";
-
 import { AppContextProvider } from "@/store/app-context";
 import { NextUIProvider } from "@nextui-org/react";
 

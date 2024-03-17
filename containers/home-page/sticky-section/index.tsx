@@ -4,11 +4,13 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { animatedSectionChildVariants } from "@/lib/transitions";
 
 const StickySection = () => {
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
   });
+
+  console.log(containerRef.current);
 
   const scaleBg = useTransform(scrollYProgress, [0, 0.15], [0.9, 1]);
   const yBg = useTransform(scrollYProgress, [0, 0.15], ["1vw", "0vw"]);
