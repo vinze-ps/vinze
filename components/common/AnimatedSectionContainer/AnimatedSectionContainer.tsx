@@ -1,3 +1,4 @@
+"use client";
 import useSectionAnimations from "@/hooks/use-section-animations";
 import { animatedSectionVariants } from "@/lib/transitions";
 import { HTMLMotionProps, motion } from "framer-motion";

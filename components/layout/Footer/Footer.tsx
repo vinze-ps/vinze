@@ -1,3 +1,4 @@
+"use client";
 import { useInView } from "framer-motion";
 import React, { useRef } from "react";
 import VinzeLogo from "@/public/icons/vinze.svg";
@@ -8,9 +9,7 @@ const Footer = () => {
 
   return (
     <div ref={ref} className="w-full p-0 border-t h-[50vh] w-full z-[0] relative">
-      <div
-        className={`${inView ? "fixed" : "hidden"} bottom-0 bg-[black] text-[white] w-full h-[100vh] flex items-end`}
-      >
+      <div className={`${inView ? "fixed" : "hidden"} bottom-0 bg-[black] text-[white] w-full h-[100vh] flex items-end`}>
         <div className="w-full p-6 h-[50vh] container">
           <div className="w-max">
             <VinzeLogo className="w-full max-w-[200px] [&>g]:fill-[white]" />

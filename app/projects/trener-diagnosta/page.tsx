@@ -1,3 +1,4 @@
+"use client";
 import { motion } from "framer-motion";
 import React from "react";
 import Image from "next/image";
@@ -20,15 +21,12 @@ const TrenerDiagnosta = () => {
           <h1 className="text-4xl font-extrabold tracking-tight lg:text-6xl mt-2 mb-4">Trener diagnosta.</h1>
         </motion.div>
         <motion.p variants={animatedSectionChildVariants} className="text-md text-muted-foreground">
-          A sleek and efficient React/NextJS web application tailored for personal trainers and fitness enthusiasts.
-          This platform is engineered to function as both an interactive digital business card and a robust client
-          engagement tool, streamlining the process of scheduling and management for personal training services.
+          A sleek and efficient React/NextJS web application tailored for personal trainers and fitness enthusiasts. This platform is engineered to function as
+          both an interactive digital business card and a robust client engagement tool, streamlining the process of scheduling and management for personal
+          training services.
         </motion.p>
       </AnimatedSectionContainer>
-      <AnimatedSectionContainer
-        once
-        className="mt-8 w-full bg-[rgb(210,237,237)] overflow-hidden md:h-[75vh] h-[40vh] min-h-[400px] max-h-[800px] relative"
-      >
+      <AnimatedSectionContainer once className="mt-8 w-full bg-[rgb(210,237,237)] overflow-hidden md:h-[75vh] h-[40vh] min-h-[400px] max-h-[800px] relative">
         <ParallaxItem variants={animatedSectionChildOpacityVariants} offset={100} className="w-full h-full mx-auto">
           <Image
             priority
@@ -42,13 +40,12 @@ const TrenerDiagnosta = () => {
       </AnimatedSectionContainer>
       <AnimatedSectionContainer className="max-w-[1024px] mx-auto py-8 px-4">
         <motion.p variants={animatedSectionChildVariants} className="text-md text-muted-foreground mb-4">
-          Key Features: User Authentication: Secure login functionality ensures a personalized and secure experience for
-          each user. Online Booking System: An intuitive interface allows clients to easily schedule appointments,
-          enhancing convenience and efficiency. Contact Integration: Direct communication channels are embedded within
-          the application, facilitating seamless interaction between trainers and clients. Developed with a focus on
-          user experience, Trener Diagnosta leverages the latest web technologies to deliver a responsive, fast, and
-          accessible platform. Ideal for personal trainers looking to expand their online presence and client
-          interaction, this application is a testament to the power of modern web development in the fitness industry.
+          Key Features: User Authentication: Secure login functionality ensures a personalized and secure experience for each user. Online Booking System: An
+          intuitive interface allows clients to easily schedule appointments, enhancing convenience and efficiency. Contact Integration: Direct communication
+          channels are embedded within the application, facilitating seamless interaction between trainers and clients. Developed with a focus on user
+          experience, Trener Diagnosta leverages the latest web technologies to deliver a responsive, fast, and accessible platform. Ideal for personal trainers
+          looking to expand their online presence and client interaction, this application is a testament to the power of modern web development in the fitness
+          industry.
         </motion.p>
         <motion.p variants={animatedSectionChildVariants} className="text-md text-muted-foreground mb-4">
           Technologies: React, NextJS, TypeScript, TailwindCSS, Firebase, Framer Motion, React Hook Form, Yup, and more.

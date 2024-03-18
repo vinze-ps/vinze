@@ -1,3 +1,4 @@
+"use client";
 import { useState, useRef, useLayoutEffect, useEffect, ReactNode } from "react";
 import { motion, useScroll, useTransform, useSpring, HTMLMotionProps } from "framer-motion";
 
@@ -26,11 +27,7 @@ const ParallaxItem = ({ children, reverse = false, offset = 50, ...props }: Para
   const initialYOffset = reverse ? offset : -offset;
   const finalYOffset = reverse ? -offset : offset;
 
-  const y = useTransform(
-    scrollY,
-    [elementTop - windowHeight, elementTop + elementHeight],
-    [initialYOffset, finalYOffset]
-  );
+  const y = useTransform(scrollY, [elementTop - windowHeight, elementTop + elementHeight], [initialYOffset, finalYOffset]);
   const spring = useSpring(y, { stiffness: 900, damping: 90 });
 
   useLayoutEffect(() => {
