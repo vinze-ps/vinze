@@ -1,12 +1,14 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { Button } from "@nextui-org/react";
 
 interface Props {
   onClick?: (isOpen: boolean) => void;
+  className?: string;
 }
 
-const MobileMenuButton = ({ onClick = () => undefined }: Props) => {
+const MobileMenuButton = ({ onClick = () => undefined, className }: Props) => {
+  const { scrollY } = useScroll();
   const [isOpen, setOpenIs] = React.useState(false);
 
   const variant = isOpen ? "opened" : "closed";
@@ -61,41 +63,55 @@ const MobileMenuButton = ({ onClick = () => undefined }: Props) => {
   const width = 32;
   const height = 24;
 
+  const { scrollY: scrollYWindow } = useScroll();
+  const [hideButton, setHideButton] = useState<boolean>(window.scrollY < 60 && window.innerWidth < 768);
+
+  useMotionValueEvent(scrollYWindow, "change", (latest) => {
+    setHideButton(latest < 60);
+  });
+
   return (
-    <Button
-      onClick={() => {
-        onClick(!isOpen);
-        setOpenIs(!isOpen);
-      }}
-      disableRipple
-      className={`flex rounded-none p-0 w-[32px] h-[24px] min-w-[32px] min-h-[24px] bg-[transparent] gap-0 overflow-visible md:hidden`}
-    >
-      <motion.svg
-        viewBox="0 0 32 24"
-        overflow="visible"
-        preserveAspectRatio="none"
-        width={width}
-        height={height}
-        className={`!max-w-[auto] !max-h-[auto]`}
-      >
-        <motion.line
-          variants={top}
-          {...lineProps}
-          style={{
-            originX: "50%",
-            originY: "8px",
-          }}
-        />
-        <motion.line
-          variants={bottom}
-          {...lineProps}
-          style={{
-            originX: "50%",
-            originY: "16px",
-          }}
-        />
-      </motion.svg>
-    </Button>
+    <AnimatePresence mode="wait">
+      {!hideButton && (
+        <motion.div className={`${className ?? ""}`} animate={{ y: 16 }} exit={{ y: -16 }} transition={{ ease: "easeOut", duration: 0.3 }}>
+          <Button
+            onClick={() => {
+              onClick(!isOpen);
+              setOpenIs(!isOpen);
+              document.querySelector("html")?.classList.toggle("overflow-hidden");
+            }}
+            disableRipple
+            className={`flex rounded-none p-0 w-[32px] h-[24px] min-w-[32px] min-h-[24px] bg-[transparent] gap-0 overflow-visible`}
+          >
+            <motion.svg
+              viewBox="0 0 32 24"
+              overflow="visible"
+              preserveAspectRatio="none"
+              width={width}
+              height={height}
+              className={`!max-w-[auto] !max-h-[auto]`}
+            >
+              <motion.line
+                variants={top}
+                {...lineProps}
+                style={{
+                  originX: "50%",
+                  originY: "8px",
+                }}
+              />
+              <motion.line
+                variants={bottom}
+                {...lineProps}
+                style={{
+                  originX: "50%",
+                  originY: "16px",
+                }}
+              />
+            </motion.svg>
+          </Button>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
 

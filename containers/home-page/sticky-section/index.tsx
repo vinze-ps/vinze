@@ -10,16 +10,20 @@ const StickySection = () => {
     target: containerRef,
     offset: ["start start", "end end"],
   });
+  const [topOffset, setTopOffset] = React.useState(0);
 
   useEffect(() => {
-    console.log(
-      ((containerRef.current?.clientWidth ?? 0) - (containerRef.current?.clientWidth ?? 0) * 0.9 - (window.innerHeight - window.innerHeight * 0.9)) / 2
-    );
+    const setHandler = () =>
+      setTopOffset(
+        ((containerRef.current?.clientWidth ?? 0) - (containerRef.current?.clientWidth ?? 0) * 0.9 - (window.innerHeight - window.innerHeight * 0.9)) / 2
+      );
+    setHandler();
+    window.addEventListener("resize", setHandler);
+    return () => window.removeEventListener("resize", setHandler);
   }, []);
 
   const scaleBg = useTransform(scrollYProgress, [0, 0.15], [0.9, 1]);
-  // const translateYBg = useTransform(scrollYProgress, [0, 0.15], ["-5%", "0%"]);
-  const yBg = useTransform(scrollYProgress, [0, 0.15], ["1vw", "0vw"]);
+  const yBg = useTransform(scrollYProgress, [0, 0.15], [topOffset, 0]);
   const roundedBg = useTransform(scrollYProgress, [0, 0.15], [32, 0]);
 
   const opacity1 = useTransform(scrollYProgress, [0.2, 0.35, 0.45, 0.5], [0, 1, 1, 0]);
