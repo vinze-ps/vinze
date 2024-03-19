@@ -73,7 +73,16 @@ const MobileMenuButton = ({ onClick = () => undefined, className }: Props) => {
   return (
     <AnimatePresence mode="wait">
       {!hideButton && (
-        <motion.div className={`${className ?? ""}`} animate={{ y: 16 }} exit={{ y: -16 }} transition={{ ease: "easeOut", duration: 0.3 }}>
+        <motion.div
+          className={`${className ?? ""}`}
+          initial={{ y: -32 }}
+          animate={{ y: 16 }}
+          exit={{ y: -32 }}
+          transition={{
+            ease: [0.74, 0, 0.19, 1.02],
+            duration: 0.25,
+          }}
+        >
           <Button
             onClick={() => {
               onClick(!isOpen);
