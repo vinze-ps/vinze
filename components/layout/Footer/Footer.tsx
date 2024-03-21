@@ -12,8 +12,8 @@ const Footer = () => {
       <div className={`${inView ? "fixed" : "hidden"} bottom-0 bg-[black] text-[white] w-full h-[100vh] flex items-end`}>
         <div className="w-full p-6 h-[50vh] container">
           <div className="w-max">
-            <VinzeLogo className="w-full max-w-[200px] [&>g]:fill-[white]" />
-            <div className="tracking-widest text-center text-default-400 mt-2">BY PATRYK SURMACZ</div>
+            <VinzeLogo className="w-full max-w-[160px] [&>g]:fill-[white]" />
+            <div className="tracking-widest text-center text-default-400 text-sm mt-2">BY PATRYK SURMACZ</div>
           </div>
         </div>
       </div>

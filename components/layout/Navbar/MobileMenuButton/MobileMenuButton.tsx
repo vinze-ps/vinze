@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { Button } from "@nextui-org/react";
@@ -10,6 +11,8 @@ interface Props {
 const MobileMenuButton = ({ onClick = () => undefined, className }: Props) => {
   const { scrollY } = useScroll();
   const [isOpen, setOpenIs] = React.useState(false);
+  const { scrollY: scrollYWindow } = useScroll();
+  const [hideButton, setHideButton] = useState<boolean>(window.scrollY < 60 && window.innerWidth < 768);
 
   const variant = isOpen ? "opened" : "closed";
 
@@ -62,9 +65,6 @@ const MobileMenuButton = ({ onClick = () => undefined, className }: Props) => {
 
   const width = 32;
   const height = 24;
-
-  const { scrollY: scrollYWindow } = useScroll();
-  const [hideButton, setHideButton] = useState<boolean>(window.scrollY < 60 && window.innerWidth < 768);
 
   useMotionValueEvent(scrollYWindow, "change", (latest) => {
     setHideButton(latest < 60);
