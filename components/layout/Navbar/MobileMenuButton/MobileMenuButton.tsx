@@ -1,7 +1,8 @@
 "use client";
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { Button } from "@nextui-org/react";
+import { AppContext } from "@/store/app-context";
 
 interface Props {
   onClick?: (isOpen: boolean) => void;
@@ -9,10 +10,17 @@ interface Props {
 }
 
 const MobileMenuButton = ({ onClick = () => undefined, className }: Props) => {
+  const { menuButton } = useContext(AppContext);
   const { scrollY } = useScroll();
   const [isOpen, setOpenIs] = React.useState(false);
   const { scrollY: scrollYWindow } = useScroll();
-  const [hideButton, setHideButton] = useState<boolean>(window.scrollY < 60 && window.innerWidth < 768);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (window.innerWidth < 768) {
+      menuButton.setHidden(window.scrollY < 60);
+    }
+  }, [menuButton]);
 
   const variant = isOpen ? "opened" : "closed";
 
@@ -67,17 +75,17 @@ const MobileMenuButton = ({ onClick = () => undefined, className }: Props) => {
   const height = 24;
 
   useMotionValueEvent(scrollYWindow, "change", (latest) => {
-    setHideButton(latest < 60);
+    menuButton.setHidden(latest < 60);
   });
 
   return (
     <AnimatePresence mode="wait">
-      {!hideButton && (
+      {!menuButton.hidden && (
         <motion.div
-          className={`${className ?? ""}`}
-          initial={{ y: -32 }}
-          animate={{ y: 16 }}
-          exit={{ y: -32 }}
+          className={`translate-y-[-48px] ${className ?? ""}`}
+          initial={{ y: -48 }}
+          animate={{ y: 0 }}
+          exit={{ y: -48 }}
           transition={{
             ease: [0.74, 0, 0.19, 1.02],
             duration: 0.25,

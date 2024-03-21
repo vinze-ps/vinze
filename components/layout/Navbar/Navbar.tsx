@@ -46,7 +46,9 @@ const Navbar = () => {
             <NavigationMenuList>
               <NavigationMenuItem>
                 <Link scroll={false} href={MAIN_MENU.home.href} legacyBehavior passHref>
-                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-[transparent]")}>{MAIN_MENU.home.title}</NavigationMenuLink>
+                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-[transparent]")}>
+                    {MAIN_MENU.home.title}
+                  </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
@@ -61,8 +63,12 @@ const Navbar = () => {
                           href={MAIN_MENU.projects.items.allProjects.href}
                         >
                           <Image className="rounded-lg" src={TD1} alt={"Trener diagnosta"} width={158} height={88} />
-                          <div className="mb-2 mt-4 text-lg font-medium">{MAIN_MENU.projects.items.allProjects.title}</div>
-                          <p className="text-sm leading-tight text-muted-foreground">{MAIN_MENU.projects.items.allProjects.desc}</p>
+                          <div className="mb-2 mt-4 text-lg font-medium">
+                            {MAIN_MENU.projects.items.allProjects.title}
+                          </div>
+                          <p className="text-sm leading-tight text-muted-foreground">
+                            {MAIN_MENU.projects.items.allProjects.desc}
+                          </p>
                         </Link>
                       </NavigationMenuLink>
                     </li>
@@ -72,7 +78,10 @@ const Navbar = () => {
                     <ListItem href={MAIN_MENU.projects.items.dropui.href} title={MAIN_MENU.projects.items.dropui.title}>
                       {MAIN_MENU.projects.items.dropui.desc}
                     </ListItem>
-                    <ListItem href={MAIN_MENU.projects.items.trenerDiagnosta.href} title={MAIN_MENU.projects.items.trenerDiagnosta.title}>
+                    <ListItem
+                      href={MAIN_MENU.projects.items.trenerDiagnosta.href}
+                      title={MAIN_MENU.projects.items.trenerDiagnosta.title}
+                    >
                       {MAIN_MENU.projects.items.trenerDiagnosta.desc}
                     </ListItem>
                   </ul>
@@ -90,7 +99,9 @@ const Navbar = () => {
                           href={MAIN_MENU.blog.items.allPosts.href}
                         >
                           <div className="mb-2 mt-4 text-lg font-medium">{MAIN_MENU.blog.items.allPosts.title}</div>
-                          <p className="text-sm leading-tight text-muted-foreground">{MAIN_MENU.blog.items.allPosts.desc}</p>
+                          <p className="text-sm leading-tight text-muted-foreground">
+                            {MAIN_MENU.blog.items.allPosts.desc}
+                          </p>
                         </Link>
                       </NavigationMenuLink>
                     </li>
@@ -111,14 +122,22 @@ const Navbar = () => {
         </NavbarContent>
         <NavbarContent justify="end">
           <NavbarItem>
-            <Button size="sm" radius="lg" disableAnimation as={Link} color="primary" href={MAIN_MENU.about.href} variant="solid">
+            <Button
+              size="sm"
+              radius="lg"
+              disableAnimation
+              as={Link}
+              color="primary"
+              href={MAIN_MENU.about.href}
+              variant="solid"
+            >
               {MAIN_MENU.about.title}
             </Button>
           </NavbarItem>
         </NavbarContent>
       </NavbarNEXT>
       <MobileMenu isOpen={mobileMenuIsOpen} />
-      <MenuButton onClick={setMobileMenuIsOpen} className="fixed top-[0rem] right-[1rem] z-[50]" />
+      <MenuButton onClick={setMobileMenuIsOpen} className="fixed top-[2rem] right-[2rem] z-[50]" />
     </>
   );
 };
