@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { motion } from "framer-motion";
 import styles from "./MobileMenu.module.scss";
 import { MAIN_MENU } from "@/lib/dictionaries";
 import Link from "next/link";
+import { AppContext } from "@/store/app-context";
 
-const MobileMenu = ({ isOpen }: { isOpen: boolean }) => {
+const MobileMenu = () => {
+  const { menu } = useContext(AppContext);
+
   const mobileMenuVariant = {
     opened: {
       y: "0%",
@@ -70,12 +73,19 @@ const MobileMenu = ({ isOpen }: { isOpen: boolean }) => {
   };
 
   return (
-    <motion.div initial="closed" animate={isOpen ? "opened" : "closed"} variants={mobileMenuVariant} className={`z-[39] ${styles["mobile-menu"]} md:hidden`}>
+    <motion.div
+      initial="closed"
+      animate={menu.isOpen ? "opened" : "closed"}
+      variants={mobileMenuVariant}
+      className={`z-[39] ${styles["mobile-menu"]} md:hidden`}
+    >
       <motion.ul className="flex-1 flex flex-col items-center justify-center gap-8" variants={ulVariant}>
         {Object.keys(MAIN_MENU).map((navKey) => (
           <motion.li whileTap={{ scale: 0.95 }} key={navKey}>
             <motion.div className="text-4xl" variants={liVariant}>
-              <Link href={(MAIN_MENU as any)[navKey].href}>{(MAIN_MENU as any)[navKey].title}</Link>
+              <Link onClick={() => {}} href={(MAIN_MENU as any)[navKey].href}>
+                {(MAIN_MENU as any)[navKey].title}
+              </Link>
             </motion.div>
           </motion.li>
         ))}

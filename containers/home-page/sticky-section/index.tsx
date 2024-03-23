@@ -1,17 +1,25 @@
 "use client";
 import React, { useContext, useEffect } from "react";
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useMotionValueEvent, useScroll, useTransform } from "framer-motion";
 import { AppContext } from "@/store/app-context";
 
 const StickySection = () => {
-  const { menuButton } = useContext(AppContext);
+  const { menu } = useContext(AppContext);
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
   });
   const [topOffset, setTopOffset] = React.useState(0);
+
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    if (latest > 0) {
+      menu.setButtonTheme("LIGHT");
+    } else {
+      menu.setButtonTheme("DARK");
+    }
+  });
 
   useEffect(() => {
     const setHandler = () =>

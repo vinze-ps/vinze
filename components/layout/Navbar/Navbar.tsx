@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Navbar as NavbarNEXT, NavbarBrand, NavbarContent, NavbarItem, Button } from "@nextui-org/react";
 import {
   NavigationMenu,
@@ -18,18 +18,19 @@ import { MenuButton } from "./MobileMenuButton/MobileMenuButton";
 import MobileMenu from "./MobileMenu/MobileMenu";
 import { MAIN_MENU } from "@/lib/dictionaries";
 import VinzeLogo from "@/public/icons/vinze.svg";
+import { AppContext } from "@/store/app-context";
 
 const Navbar = () => {
-  const [mobileMenuIsOpen, setMobileMenuIsOpen] = React.useState(false);
+  const { menu } = useContext(AppContext);
 
   return (
     <>
       <NavbarNEXT
         className={`h-14 relative top-0 border-b-1 left-0 bg-[hsla(var(--background))] backdrop-blur-none ${
-          mobileMenuIsOpen ? "duration-[3s] transition-all" : ""
+          menu.isOpen ? "duration-[3s] transition-all" : ""
         }`}
         // className={`h-14 fixed top-0 border-b-1 left-0 bg-[hsla(var(--background-transparent))] ${
-        //   mobileMenuIsOpen ? "bg-[white] duration-[3s] transition-all backdrop-blur-none" : ""
+        //   menu.isOpen ? "bg-[white] duration-[3s] transition-all backdrop-blur-none" : ""
         // }`}
         classNames={{
           item: ["font-sm", "flex", "relative", "h-full", "items-center", "data-[active=true]:after:bg-primary"],
@@ -130,14 +131,15 @@ const Navbar = () => {
               color="primary"
               href={MAIN_MENU.about.href}
               variant="solid"
+              className="me-12 md:me-0"
             >
               {MAIN_MENU.about.title}
             </Button>
           </NavbarItem>
         </NavbarContent>
       </NavbarNEXT>
-      <MobileMenu isOpen={mobileMenuIsOpen} />
-      <MenuButton onClick={setMobileMenuIsOpen} className="fixed top-[2rem] right-[2rem] z-[50]" />
+      <MobileMenu />
+      <MenuButton />
     </>
   );
 };
