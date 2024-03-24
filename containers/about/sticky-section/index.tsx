@@ -117,6 +117,8 @@ const StickySection = () => {
           </p>
         </motion.div>
         <video
+          onContextMenu={(e) => e.preventDefault()}
+          controlsList="nodownload"
           className="absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] min-h-full min-w-full max-w-[none]"
           muted
           autoPlay

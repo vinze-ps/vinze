@@ -1,7 +1,7 @@
 import React from "react";
 
-const CurrentlyWorkingOn = () => {
-  return <div>CurrentlyWorkingAt</div>;
+const CurrentlyWorkingOnSection = () => {
+  return <div></div>;
 };
 
-export default CurrentlyWorkingOn;
+export default CurrentlyWorkingOnSection;
