@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function Template({ children }: any) {
   return (
-    <motion.div className="w-full h-full">
+    <motion.div className="dark w-full h-full">
       <motion.div
         variants={slidePageVariants}
         className="fixed top-[0vh] left-0 bg-background w-[100vw] h-[100vh] z-[50] shadow-2xl"
@@ -17,7 +17,7 @@ export default function Template({ children }: any) {
         key="page"
       ></motion.div>
       <motion.div
-        className="dark bg-[hsl(var(--background))]"
+        className="bg-[hsl(var(--background))]"
         initial="initial"
         exit="exit"
         animate="enter"
