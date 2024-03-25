@@ -14,9 +14,7 @@ const Footer = () => {
 
   return (
     <div ref={ref} className="w-full p-0 border-t h-[40vh] w-full z-[0] relative">
-      <div
-        className={`${inView ? "fixed" : "hidden"} bottom-0 bg-[black] text-[white] w-full h-[100vh] flex items-end`}
-      >
+      <div className={`${inView ? "fixed" : "hidden"} bottom-0 bg-[black] text-[white] w-full h-[100vh] flex items-end`}>
         <div className="w-full md:py-12 p-6 h-[40vh] container">
           <div className="w-full h-full grid grid-cols-5">
             <div className="col-span-2">
@@ -61,19 +59,19 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a className="mt-1 flex items-center" href="https://github.com/vinze-ps">
+                  <a className="mt-1 flex items-center" href="https://www.instagram.com/_patryk_surmacz_/">
                     <InstagramIcon className="[&>path]:fill-[white] me-2 scale-[0.8]" />
                     Instagram
                   </a>
                 </li>
                 <li>
-                  <a className="mt-1 flex items-center" href="https://github.com/vinze-ps">
+                  <a className="mt-1 flex items-center" href="https://www.linkedin.com/in/patryk-surmacz-39a12019a/">
                     <LinkedInIcon className="[&>path]:fill-[white] me-2 scale-[0.8]" />
                     LinkedIn
                   </a>
                 </li>
                 <li>
-                  <a className="mt-1 flex items-center" href="https://github.com/vinze-ps">
+                  <a className="mt-1 flex items-center" href="https://www.facebook.com/patryk.surmacz.12/">
                     <FacebookIcon className="[&>path]:fill-[white] me-2 scale-[0.8]" />
                     Facebook
                   </a>
@@ -82,9 +80,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="w-full">
-            <div className="w-full text-center text-default-400 text-sm py-4">
-              © {new Date().getFullYear()} Patryk Surmacz. All rights reserved.
-            </div>
+            <div className="w-full text-center text-default-400 text-sm py-4">© {new Date().getFullYear()} Patryk Surmacz. All rights reserved.</div>
           </div>
         </div>
       </div>

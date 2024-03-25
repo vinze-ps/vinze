@@ -7,7 +7,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: hsl(var(--background));
+  background-color: hsl(var(--background-transparent));
+  backdrop-filter: blur(20px);
 
   ul {
     list-style: none;

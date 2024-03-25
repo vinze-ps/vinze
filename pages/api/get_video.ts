@@ -3,10 +3,18 @@ import fs from "fs";
 import path from "path";
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  const videoPath = path.resolve("./lib/assets/videos/Wavy_light.mp4");
+  const videoPath = path.resolve(`./lib/assets/videos/${req.query.name as string}.mp4`);
   const stat = fs.statSync(videoPath);
   const fileSize = stat.size;
   const range = req.headers.range;
+
+  const expectedReferer = "http://localhost:3000/";
+
+  const referer = process.env.NODE_ENV === "production" ? process.env.HOST : req.headers.referer;
+
+  if (!referer || !referer.startsWith(expectedReferer)) {
+    return res.status(401).json({ error: "Access denied." });
+  }
 
   if (range) {
     const parts = range.replace(/bytes=/, "").split("-");
@@ -33,3 +41,9 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     fs.createReadStream(videoPath).pipe(res);
   }
 }
+
+export const config = {
+  api: {
+    responseLimit: "8mb",
+  },
+};
