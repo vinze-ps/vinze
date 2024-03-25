@@ -28,7 +28,7 @@ const AppContext = createContext<AppContextValue>(initialContextValue);
 const AppContextProvider = ({ children }: { children: React.ReactNode }) => {
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false);
   const [menuButtonHidden, setMenuButtonHidden] = useState<boolean>(true);
-  const [menuButtonTheme, setMenuButtonTheme] = useState<"LIGHT" | "DARK">("DARK");
+  const [menuButtonTheme, setMenuButtonTheme] = useState<"LIGHT" | "DARK">("LIGHT");
 
   return (
     <AppContext.Provider

@@ -82,7 +82,7 @@ const MobileMenu = () => {
       <motion.ul className="flex-1 flex flex-col items-center justify-center gap-8" variants={ulVariant}>
         {Object.keys(MAIN_MENU).map((navKey) => (
           <motion.li whileTap={{ scale: 0.95 }} key={navKey}>
-            <motion.div className="text-4xl" variants={liVariant}>
+            <motion.div className="text-4xl text-[white]" variants={liVariant}>
               <Link onClick={() => {}} href={(MAIN_MENU as any)[navKey].href}>
                 {(MAIN_MENU as any)[navKey].title}
               </Link>

@@ -63,7 +63,7 @@ const MobileMenuButton = () => {
   };
 
   const lineProps = {
-    stroke: menu.buttonTheme === "DARK" || menu.isOpen ? "#000" : "#fff",
+    stroke: menu.buttonTheme === "LIGHT" || menu.isOpen ? "#fff" : "#000",
     strokeWidth: 2,
     vectorEffect: "non-scaling-stroke",
     initial: "closed",
