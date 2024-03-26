@@ -72,7 +72,7 @@ const MobileMenuButton = () => {
   };
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    window.innerWidth >= 768 && menu.setButtonHidden(latest < 60);
+    menu.isOpen ? menu.setButtonHidden(false) : window.innerWidth >= 768 && menu.setButtonHidden(latest < 60);
   });
 
   return (
@@ -91,7 +91,7 @@ const MobileMenuButton = () => {
           <Button
             onClick={() => {
               menu.setIsOpen(!menu.isOpen);
-              document.querySelector("html")?.classList.toggle("overflow-hidden");
+              !menu.isOpen && menu.setButtonHidden(false);
             }}
             disableRipple
             className={`bg-[transparent] flex rounded-none p-0 w-[32px] h-[24px] min-w-[32px] min-h-[24px] gap-0 overflow-visible`}

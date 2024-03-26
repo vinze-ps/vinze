@@ -77,13 +77,18 @@ const MobileMenu = () => {
       initial="closed"
       animate={menu.isOpen ? "opened" : "closed"}
       variants={mobileMenuVariant}
-      className={`z-[39] ${styles["mobile-menu"]} md:hidden`}
+      className={`z-[41] ${styles["mobile-menu"]} md:hidden`}
     >
       <motion.ul className="flex-1 flex flex-col items-center justify-center gap-8" variants={ulVariant}>
         {Object.keys(MAIN_MENU).map((navKey) => (
           <motion.li whileTap={{ scale: 0.95 }} key={navKey}>
             <motion.div className="text-4xl text-[white]" variants={liVariant}>
-              <Link onClick={() => {}} href={(MAIN_MENU as any)[navKey].href}>
+              <Link
+                onClick={() => {
+                  menu.setIsOpen(false);
+                }}
+                href={(MAIN_MENU as any)[navKey].href}
+              >
                 {(MAIN_MENU as any)[navKey].title}
               </Link>
             </motion.div>

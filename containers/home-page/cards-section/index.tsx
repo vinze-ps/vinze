@@ -12,10 +12,10 @@ const CardSection = () => {
       {/* <div className={`bg-[hsl(var(--purple))] w-full h-[600px] rounded-lg relative p-8 shadow-xl`}> */}
       <div className="bg-default-50 w-full h-[600px] rounded-lg p-8 shadow-xl overflow-hidden relative">
         {/* <Lines1 className="w-full h-full rounded-lg absolute left-0 top-0 z-[0]" /> */}
-        {/* <motion.h1 variants={animatedSectionChildVariants} className="text-4xl font-extrabold tracking-tight lg:text-6xl mb-4 text-[hsl(var(--background))]"> */}
+        {/* <motion.h1 variants={animatedSectionChildVariants} className="text-4xl font-bold tracking-tight lg:text-6xl mb-4 text-[hsl(var(--background))]"> */}
         <motion.h1
           variants={animatedSectionChildVariants}
-          className="text-4xl font-extrabold tracking-tight lg:text-6xl mb-4 text-primary"
+          className="text-4xl font-bold tracking-tight lg:text-6xl mb-4 text-primary"
         >
           Design.
         </motion.h1>
@@ -28,7 +28,7 @@ const CardSection = () => {
       <div className="bg-default-50 w-full h-[600px] rounded-lg p-8 shadow-xl overflow-hidden relative">
         <motion.h1
           variants={animatedSectionChildVariants}
-          className="text-4xl font-extrabold tracking-tight lg:text-6xl mb-4 text-primary"
+          className="text-4xl font-bold tracking-tight lg:text-6xl mb-4 text-primary"
         >
           Development.
         </motion.h1>
