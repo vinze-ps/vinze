@@ -10,7 +10,9 @@ import FacebookIcon from "@/public/icons/facebook.svg";
 
 const Footer = () => {
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref);
+  const inView = useInView(ref, {
+    margin: "30px",
+  });
 
   return (
     <div ref={ref} className="w-full p-0 border-t h-[40vh] w-full z-[0] relative">

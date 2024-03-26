@@ -88,6 +88,7 @@ const config: Config = {
   plugins: [
     tailwindcssanimate,
     nextui({
+      prefix: "vinze",
       layout: {
         radius: {
           small: "4px",
@@ -101,8 +102,18 @@ const config: Config = {
         },
       },
       themes: {
-        light: {},
-        dark: {},
+        light: {
+          colors: {
+            background: "var(--background)",
+            foreground: "var(--foreground)",
+          },
+        },
+        dark: {
+          colors: {
+            background: "var(--background)",
+            foreground: "var(--foreground)",
+          },
+        },
       },
     }),
   ],
