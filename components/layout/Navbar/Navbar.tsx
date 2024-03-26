@@ -26,9 +26,7 @@ const Navbar = () => {
   return (
     <>
       <NavbarNEXT
-        className={`h-14 relative top-0 border-b-1 left-0 bg-[hsla(var(--background))] backdrop-blur-none ${
-          menu.isOpen ? "duration-[3s] transition-all" : ""
-        }`}
+        className={`h-14 relative top-0 border-b-1 left-0 bg-[hsla(var(--background))] backdrop-blur-none ${menu.isOpen ? "duration-[3s] transition-all" : ""}`}
         // className={`h-14 fixed top-0 border-b-1 left-0 bg-[hsla(var(--background-transparent))] ${
         //   menu.isOpen ? "bg-[white] duration-[3s] transition-all backdrop-blur-none" : ""
         // }`}
@@ -53,9 +51,7 @@ const Navbar = () => {
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-default-500 bg-[transparent]">
-                  {MAIN_MENU.projects.title}
-                </NavigationMenuTrigger>
+                <NavigationMenuTrigger className="text-default-500 bg-[transparent]">{MAIN_MENU.projects.title}</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                     <li className="row-span-3">
@@ -66,42 +62,25 @@ const Navbar = () => {
                           href={MAIN_MENU.projects.items.allProjects.href}
                         >
                           <Image className="rounded-lg" src={TD1} alt={"Trener diagnosta"} width={158} height={88} />
-                          <div className="mb-2 mt-4 text-lg font-medium">
-                            {MAIN_MENU.projects.items.allProjects.title}
-                          </div>
-                          <p className="text-sm leading-tight text-muted-foreground">
-                            {MAIN_MENU.projects.items.allProjects.desc}
-                          </p>
+                          <div className="mb-2 mt-4 text-lg font-medium">{MAIN_MENU.projects.items.allProjects.title}</div>
+                          <p className="text-sm leading-tight text-muted-foreground">{MAIN_MENU.projects.items.allProjects.desc}</p>
                         </Link>
                       </NavigationMenuLink>
                     </li>
-                    <ListItem
-                      className="disabled"
-                      href={MAIN_MENU.projects.items.kapla.href}
-                      title={MAIN_MENU.projects.items.kapla.title}
-                    >
+                    <ListItem className="disabled" href={MAIN_MENU.projects.items.kapla.href} title={MAIN_MENU.projects.items.kapla.title}>
                       {MAIN_MENU.projects.items.kapla.desc}
                     </ListItem>
-                    <ListItem
-                      className="disabled"
-                      href={MAIN_MENU.projects.items.dropui.href}
-                      title={MAIN_MENU.projects.items.dropui.title}
-                    >
+                    <ListItem className="disabled" href={MAIN_MENU.projects.items.dropui.href} title={MAIN_MENU.projects.items.dropui.title}>
                       {MAIN_MENU.projects.items.dropui.desc}
                     </ListItem>
-                    <ListItem
-                      href={MAIN_MENU.projects.items.trenerDiagnosta.href}
-                      title={MAIN_MENU.projects.items.trenerDiagnosta.title}
-                    >
+                    <ListItem href={MAIN_MENU.projects.items.trenerDiagnosta.href} title={MAIN_MENU.projects.items.trenerDiagnosta.title}>
                       {MAIN_MENU.projects.items.trenerDiagnosta.desc}
                     </ListItem>
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-default-500 bg-[transparent] disabled">
-                  {MAIN_MENU.blog.title}
-                </NavigationMenuTrigger>
+                <NavigationMenuTrigger className="text-default-500 bg-[transparent] disabled">{MAIN_MENU.blog.title}</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                     <li className="row-span-3">
@@ -112,9 +91,7 @@ const Navbar = () => {
                           href={MAIN_MENU.blog.items.allPosts.href}
                         >
                           <div className="mb-2 mt-4 text-lg font-medium">{MAIN_MENU.blog.items.allPosts.title}</div>
-                          <p className="text-sm leading-tight text-muted-foreground">
-                            {MAIN_MENU.blog.items.allPosts.desc}
-                          </p>
+                          <p className="text-sm leading-tight text-muted-foreground">{MAIN_MENU.blog.items.allPosts.desc}</p>
                         </Link>
                       </NavigationMenuLink>
                     </li>
@@ -140,10 +117,9 @@ const Navbar = () => {
               radius="lg"
               disableAnimation
               as={Link}
-              color="primary"
               href={MAIN_MENU.about.href}
               variant="solid"
-              className="me-12 md:me-0"
+              className="me-12 md:me-0 bg-foreground text-background"
             >
               {MAIN_MENU.about.title}
             </Button>

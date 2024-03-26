@@ -19,7 +19,7 @@ export default function Template({ children }: any) {
       <motion.div className="text-foreground bg-background" initial="initial" exit="exit" animate="enter" variants={perspectivePageVariants}>
         <motion.div initial="initial" exit="exit" animate="enter" variants={opacityPageVariants}>
           <Navbar />
-          <div className="z-[1] text-foreground bg-background relative w-full mx-auto min-h-[calc(100vh-4rem)]">
+          <div className="z-[1] text-foreground bg-background border-b-1 relative w-full mx-auto min-h-[calc(100vh-4rem)]">
             <main className="w-full">{children}</main>
           </div>
           <Footer />

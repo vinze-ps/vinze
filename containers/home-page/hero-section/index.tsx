@@ -33,12 +33,12 @@ const HeroSection = () => {
           </motion.h1>
           <motion.p variants={animatedSectionChildVariants} className="text-md text-muted-foreground">
             My name is Patryk, and I&apos;ve been a programmer since 2018. In 2021, I embarked on a professional journey as a programmer with{" "}
-            <a href="https://www.p88.pl" target="_blank" className="text-[hsl(var(--blue))]">
+            <a href="https://www.p88.pl" target="_blank" className="text-blue-500">
               {" "}
               Personal&apos;88
             </a>
             , concurrently joining the team at{" "}
-            <a href="https://softwarelogic.co/" target="_blank" className="text-[hsl(var(--blue))]">
+            <a href="https://softwarelogic.co/" target="_blank" className="text-blue-500">
               {" "}
               Softwarelogic
             </a>
@@ -46,7 +46,7 @@ const HeroSection = () => {
             Science at the West Pomeranian University of Technology in Szczecin.
           </motion.p>
           <motion.div variants={animatedSectionChildVariants} className="mt-16">
-            <Button disableRipple size="lg" className="rounded-full bg-[hsl(var(--blue))] text-[white]">
+            <Button disableRipple size="lg" className="rounded-full bg-blue-500 text-[white]">
               My work
             </Button>
           </motion.div>
@@ -55,16 +55,16 @@ const HeroSection = () => {
           </motion.p>
           <div className="flex gap-4 mt-2">
             <motion.a variants={animatedSectionChildVariants} href="https://github.com/vinze-ps">
-              <GitHubIcon className="[&>path]:fill-[black]" />
+              <GitHubIcon className="[&>path]:fill-foreground" />
             </motion.a>
             <motion.a variants={animatedSectionChildVariants} href="https://www.instagram.com/_patryk_surmacz_/">
-              <InstagramIcon className="[&>path]:fill-[black]" />
+              <InstagramIcon className="[&>path]:fill-foreground" />
             </motion.a>
             <motion.a variants={animatedSectionChildVariants} href="https://www.linkedin.com/in/patryk-surmacz-39a12019a/">
-              <LinkedInIcon className="[&>path]:fill-[black]" />
+              <LinkedInIcon className="[&>path]:fill-foreground" />
             </motion.a>
             <motion.a variants={animatedSectionChildVariants} href="https://www.facebook.com/patryk.surmacz.12/">
-              <FacebookIcon className="[&>path]:fill-[black]" />
+              <FacebookIcon className="[&>path]:fill-foreground" />
             </motion.a>
           </div>
         </div>

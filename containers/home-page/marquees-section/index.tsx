@@ -11,15 +11,15 @@ import HTML5Icon from "@/public/icons/html5.svg";
 
 const marqueeIcons = [
   {
-    icon: <HTML5Icon className="[&>path]:fill-[black]" />,
+    icon: <HTML5Icon className="[&>path]:fill-foreground" />,
     group: 1,
   },
   {
-    icon: <FigmaIcon className="[&>path]:fill-[black]" />,
+    icon: <FigmaIcon className="[&>path]:fill-foreground" />,
     group: 1,
   },
   {
-    icon: <ReduxIcon className="[&>path]:fill-[black]" />,
+    icon: <ReduxIcon className="[&>path]:fill-foreground" />,
     group: 1,
   },
   {
@@ -27,19 +27,19 @@ const marqueeIcons = [
     group: 1,
   },
   {
-    icon: <NextJSIcon className="[&>path]:fill-[black]" />,
+    icon: <NextJSIcon />,
     group: 2,
   },
   {
-    icon: <ReactIcon className="[&>path]:fill-[black]" />,
+    icon: <ReactIcon className="[&>path]:fill-foreground" />,
     group: 2,
   },
   {
-    icon: <JSIcon className="[&>path]:fill-[black]" />,
+    icon: <JSIcon className="[&>path]:fill-foreground" />,
     group: 2,
   },
   {
-    icon: <NodeJSIcon className="[&>path]:fill-[black]" />,
+    icon: <NodeJSIcon className="[&>path]:fill-foreground" />,
     group: 2,
   },
 ];
@@ -47,7 +47,7 @@ const marqueeIcons = [
 const MarqueesSection = () => {
   return (
     <>
-      <Marquee className="mb-8 md:mb-16" autoFill gradient gradientColor="hsl(var(--background))">
+      <Marquee className="mb-8 md:mb-16" autoFill gradient gradientColor="hsl(var(--vinze-background))">
         {marqueeIcons
           .filter((icon) => icon.group === 1)
           .map((icon, index) => (
@@ -56,7 +56,7 @@ const MarqueesSection = () => {
             </div>
           ))}
       </Marquee>
-      <Marquee className="mb-16 md:mb-32" autoFill gradient gradientColor="hsl(var(--background))" direction="right">
+      <Marquee className="mb-16 md:mb-32" autoFill gradient gradientColor="hsl(var(--vinze-background))" direction="right">
         {marqueeIcons
           .filter((icon) => icon.group === 2)
           .map((icon, index) => (

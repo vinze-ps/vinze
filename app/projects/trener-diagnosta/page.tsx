@@ -15,7 +15,7 @@ const TrenerDiagnosta = () => {
     <>
       <AnimatedSectionContainer className="max-w-[1024px] mx-auto pt-24 px-4">
         <motion.div variants={animatedSectionChildVariants}>
-          <Badge className="bg-[hsl(var(--light-green))] text-primary" variant={"default"}>
+          <Badge className="bg-green-500 text-background" variant={"default"}>
             Website
           </Badge>
           <h1 className="text-4xl font-extrabold tracking-tight lg:text-6xl mt-2 mb-4">Trener diagnosta.</h1>
