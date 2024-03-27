@@ -7,6 +7,8 @@ import { AppContext } from "@/store/app-context";
 
 const MobileMenu = () => {
   const { menu } = useContext(AppContext);
+  const contact1Ref = React.useRef<HTMLHeadingElement>(null);
+  const contact2Ref = React.useRef<HTMLHeadingElement>(null);
 
   const mobileMenuVariant = {
     opened: {
@@ -78,26 +80,22 @@ const MobileMenu = () => {
       animate={menu.isOpen ? "opened" : "closed"}
       variants={mobileMenuVariant}
       className={`z-[41] ${styles["mobile-menu"]} md:hidden`}
+      onClick={(evnt) => {
+        if (evnt.target !== contact1Ref.current && evnt.target !== contact2Ref.current) menu.setIsOpen(false);
+      }}
     >
       <motion.ul className="flex-1 flex flex-col items-center justify-center gap-8" variants={ulVariant}>
         {Object.keys(MAIN_MENU).map((navKey) => (
           <motion.li whileTap={{ scale: 0.95 }} key={navKey}>
             <motion.div className="text-4xl text-[white]" variants={liVariant}>
-              <Link
-                onClick={() => {
-                  menu.setIsOpen(false);
-                }}
-                href={(MAIN_MENU as any)[navKey].href}
-              >
-                {(MAIN_MENU as any)[navKey].title}
-              </Link>
+              <Link href={(MAIN_MENU as any)[navKey].href}>{(MAIN_MENU as any)[navKey].title}</Link>
             </motion.div>
           </motion.li>
         ))}
       </motion.ul>
       <motion.div variants={fadeInVariant} className="text-center text-default-400 pb-4">
-        <h5>+48 791 555 302</h5>
-        <h5>patryk.surmacz12@gmail.com</h5>
+        <h5 ref={contact1Ref}>+48 791 555 302</h5>
+        <h5 ref={contact2Ref}>patryk.surmacz12@gmail.com</h5>
       </motion.div>
     </motion.div>
   );
