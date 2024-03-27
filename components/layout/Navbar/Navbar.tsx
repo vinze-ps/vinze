@@ -32,7 +32,7 @@ const Navbar = () => {
         // }`}
         classNames={{
           item: ["font-sm", "flex", "relative", "h-full", "items-center", "data-[active=true]:after:bg-primary"],
-          wrapper: "px-4",
+          wrapper: "px-4 max-w-[1280px]",
         }}
       >
         <NavbarBrand>
